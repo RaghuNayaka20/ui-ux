@@ -1,0 +1,1883 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f8fafc;
+    color: #0f172a;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font-family: inherit;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    width: 100%;
+    height: 75px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 7%;
+
+    background: white;
+    border-bottom: 1px solid #e2e8f0;
+
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 23px;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+.logo span {
+    color: #4f46e5;
+    margin-right: 5px;
+}
+
+.navbar nav {
+    display: flex;
+    gap: 30px;
+}
+
+.navbar nav a {
+    color: #64748b;
+    font-size: 14px;
+    font-weight: 500;
+
+    transition: 0.3s;
+}
+
+.navbar nav a:hover,
+.navbar nav .active {
+    color: #4f46e5;
+}
+
+.nav-buttons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.login-btn {
+    color: #475569;
+    font-size: 14px;
+}
+
+.signup-btn {
+    padding: 11px 20px;
+    border-radius: 8px;
+
+    color: white;
+    background: #4f46e5;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+.signup-btn:hover {
+    background: #3730a3;
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 650px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 80px 8%;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 80% 30%,
+            rgba(124, 58, 237, 0.15),
+            transparent 30%
+        ),
+        #f8fafc;
+}
+
+.hero-content {
+    width: 52%;
+}
+
+.hero-badge {
+    display: inline-block;
+
+    padding: 8px 14px;
+
+    border-radius: 30px;
+
+    background: #ede9fe;
+    color: #5b21b6;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    margin-bottom: 22px;
+}
+
+.hero h1 {
+    font-size: clamp(48px, 6vw, 76px);
+    line-height: 1.05;
+    letter-spacing: -4px;
+
+    max-width: 700px;
+}
+
+.hero h1 span {
+    display: block;
+
+    background: linear-gradient(
+        90deg,
+        #4f46e5,
+        #9333ea
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-content > p {
+    max-width: 570px;
+
+    margin-top: 25px;
+
+    color: #64748b;
+    font-size: 17px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+
+    margin-top: 32px;
+}
+
+.primary-btn,
+.secondary-btn {
+    display: inline-block;
+
+    padding: 14px 22px;
+
+    border-radius: 9px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+.primary-btn {
+    color: white;
+
+    background: linear-gradient(
+        135deg,
+        #4f46e5,
+        #7c3aed
+    );
+
+    box-shadow: 0 10px 25px rgba(79, 70, 229, 0.25);
+}
+
+.primary-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(79, 70, 229, 0.35);
+}
+
+.secondary-btn {
+    background: white;
+    border: 1px solid #e2e8f0;
+}
+
+.secondary-btn:hover {
+    border-color: #4f46e5;
+    color: #4f46e5;
+}
+
+
+/* =========================
+   HERO STATS
+========================= */
+
+.hero-stats {
+    display: flex;
+    gap: 45px;
+
+    margin-top: 45px;
+}
+
+.hero-stats div {
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-stats strong {
+    font-size: 22px;
+}
+
+.hero-stats small {
+    color: #64748b;
+    font-size: 12px;
+}
+
+
+/* =========================
+   HERO VISUAL
+========================= */
+
+.hero-visual {
+    width: 40%;
+    min-height: 470px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+}
+
+.glow {
+    width: 300px;
+    height: 300px;
+
+    position: absolute;
+
+    background: #8b5cf6;
+
+    filter: blur(100px);
+    opacity: 0.15;
+}
+
+.career-card {
+    width: 350px;
+
+    padding: 28px;
+
+    background: rgba(255,255,255,0.9);
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 30px 70px rgba(15, 23, 42, 0.12);
+
+    position: relative;
+    z-index: 2;
+
+    animation: float 4s ease-in-out infinite;
+}
+
+.card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.profile-icon {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: #ede9fe;
+
+    font-size: 22px;
+}
+
+.match {
+    padding: 6px 10px;
+
+    border-radius: 20px;
+
+    color: #15803d;
+    background: #dcfce7;
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.career-card h3 {
+    margin-top: 25px;
+    font-size: 22px;
+}
+
+.career-card p {
+    margin-top: 8px;
+
+    color: #64748b;
+    font-size: 13px;
+}
+
+.skill-list {
+    display: flex;
+    gap: 7px;
+
+    margin-top: 20px;
+
+    flex-wrap: wrap;
+}
+
+.skill-list span {
+    padding: 6px 10px;
+
+    background: #f1f5f9;
+    border-radius: 6px;
+
+    font-size: 11px;
+}
+
+.progress-area {
+    margin-top: 22px;
+}
+
+.progress-label {
+    display: flex;
+    justify-content: space-between;
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.progress-bar {
+    height: 7px;
+
+    margin-top: 8px;
+
+    border-radius: 10px;
+
+    background: #e2e8f0;
+
+    overflow: hidden;
+}
+
+.progress-bar div {
+    width: 92%;
+    height: 100%;
+
+    border-radius: 10px;
+
+    background: linear-gradient(
+        90deg,
+        #4f46e5,
+        #9333ea
+    );
+}
+
+.career-card button {
+    width: 100%;
+
+    margin-top: 24px;
+
+    padding: 12px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #0f172a;
+    color: white;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.career-card button:hover {
+    background: #4f46e5;
+}
+
+.floating-card {
+    position: absolute;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 13px 16px;
+
+    background: white;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 12px;
+
+    box-shadow: 0 15px 35px rgba(15,23,42,0.1);
+
+    z-index: 3;
+}
+
+.floating-card span {
+    font-size: 22px;
+}
+
+.floating-card strong,
+.floating-card small {
+    display: block;
+}
+
+.floating-card strong {
+    font-size: 12px;
+}
+
+.floating-card small {
+    color: #64748b;
+    font-size: 10px;
+}
+
+.card-one {
+    top: 70px;
+    left: 0;
+
+    animation: floatSmall 3s ease-in-out infinite;
+}
+
+.card-two {
+    right: -20px;
+    bottom: 70px;
+
+    animation: floatSmall 3.5s ease-in-out infinite;
+}
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes float {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+@keyframes floatSmall {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+
+/* =========================
+   SECTION COMMON
+========================= */
+
+.how-section,
+.categories-section {
+    padding: 100px 8%;
+    background: white;
+}
+
+.section-heading {
+    text-align: center;
+    max-width: 650px;
+
+    margin: 0 auto 55px;
+}
+
+.section-heading span,
+.cta span {
+    color: #4f46e5;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+.section-heading h2 {
+    margin-top: 10px;
+
+    font-size: 38px;
+    letter-spacing: -1px;
+}
+
+.section-heading p {
+    margin-top: 12px;
+
+    color: #64748b;
+}
+
+
+/* =========================
+   HOW IT WORKS
+========================= */
+
+.steps {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
+
+    max-width: 1200px;
+
+    margin: auto;
+}
+
+.step-card {
+    padding: 28px;
+
+    border: 1px solid #e2e8f0;
+    border-radius: 15px;
+
+    position: relative;
+
+    transition: 0.3s;
+}
+
+.step-card:hover {
+    transform: translateY(-7px);
+
+    border-color: #c4b5fd;
+
+    box-shadow: 0 20px 40px rgba(15,23,42,0.08);
+}
+
+.step-number {
+    position: absolute;
+    right: 20px;
+    top: 18px;
+
+    color: #cbd5e1;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.step-icon {
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: #ede9fe;
+
+    font-size: 21px;
+}
+
+.step-card h3 {
+    margin-top: 20px;
+
+    font-size: 17px;
+}
+
+.step-card p {
+    margin-top: 8px;
+
+    color: #64748b;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   CATEGORIES
+========================= */
+
+.categories-section {
+    background: #f8fafc;
+}
+
+.categories {
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.category-card {
+    padding: 28px;
+
+    background: white;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 15px;
+
+    transition: 0.3s;
+}
+
+.category-card:hover {
+    transform: translateY(-6px);
+
+    border-color: #a78bfa;
+
+    box-shadow: 0 20px 40px rgba(15,23,42,0.08);
+}
+
+.category-icon {
+    font-size: 27px;
+}
+
+.category-card h3 {
+    margin-top: 18px;
+}
+
+.category-card p {
+    color: #64748b;
+
+    font-size: 13px;
+
+    margin-top: 4px;
+}
+
+.category-card span {
+    display: inline-block;
+
+    margin-top: 20px;
+
+    color: #4f46e5;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+/* =========================
+   CTA
+========================= */
+
+.cta {
+    margin: 80px 8%;
+
+    padding: 70px 30px;
+
+    text-align: center;
+
+    border-radius: 25px;
+
+    color: white;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(255,255,255,0.15),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #312e81,
+            #6d28d9
+        );
+}
+
+.cta span {
+    color: #ddd6fe;
+}
+
+.cta h2 {
+    margin-top: 10px;
+
+    font-size: 40px;
+}
+
+.cta p {
+    margin: 12px auto 25px;
+
+    max-width: 500px;
+
+    color: #ddd6fe;
+}
+
+.cta .primary-btn {
+    background: white;
+    color: #4f46e5;
+
+    box-shadow: none;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    display: grid;
+
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+
+    gap: 40px;
+
+    padding: 70px 8%;
+
+    background: #0f172a;
+
+    color: white;
+}
+
+.footer-brand p {
+    margin-top: 15px;
+
+    color: #94a3b8;
+
+    font-size: 13px;
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+.footer-column h4 {
+    margin-bottom: 10px;
+}
+
+.footer-column a {
+    color: #94a3b8;
+
+    font-size: 13px;
+
+    transition: 0.3s;
+}
+
+.footer-column a:hover {
+    color: white;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+    .navbar nav {
+        display: none;
+    }
+
+    .hero {
+        flex-direction: column;
+
+        text-align: center;
+
+        gap: 50px;
+    }
+
+    .hero-content {
+        width: 100%;
+    }
+
+    .hero-content > p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-buttons,
+    .hero-stats {
+        justify-content: center;
+    }
+
+    .hero-visual {
+        width: 100%;
+    }
+
+    .steps {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .categories {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .navbar {
+        padding: 0 5%;
+    }
+
+    .login-btn {
+        display: none;
+    }
+
+    .hero {
+        padding: 60px 5%;
+    }
+
+    .hero h1 {
+        font-size: 45px;
+        letter-spacing: -2px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .hero-stats {
+        gap: 20px;
+    }
+
+    .hero-visual {
+        min-height: 400px;
+    }
+
+    .career-card {
+        width: 90%;
+    }
+
+    .card-one {
+        left: 0;
+        top: 30px;
+    }
+
+    .card-two {
+        right: 0;
+        bottom: 30px;
+    }
+
+    .how-section,
+    .categories-section {
+        padding: 70px 5%;
+    }
+
+    .section-heading h2 {
+        font-size: 30px;
+    }
+
+    .steps,
+    .categories {
+        grid-template-columns: 1fr;
+    }
+
+    .cta {
+        margin: 50px 5%;
+        padding: 50px 20px;
+    }
+
+    .cta h2 {
+        font-size: 30px;
+    }
+
+    footer {
+        grid-template-columns: 1fr 1fr;
+        padding: 50px 5%;
+    }
+}
+/* =========================================================
+   CAREERLY - NEW FUNCTIONAL SECTIONS
+   Paste this at the VERY BOTTOM of style.css
+   ========================================================= */
+
+
+/* ================= GENERAL ================= */
+
+html {
+    scroll-behavior: smooth;
+}
+
+section[id] {
+    scroll-margin-top: 90px;
+}
+
+
+/* ================= CAREER CARD BUTTON ================= */
+
+.career-card-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+
+    margin-top: 20px;
+    padding: 12px 18px;
+
+    background: linear-gradient(
+        135deg,
+        #4f46e5,
+        #7c3aed
+    );
+
+    color: white;
+    border-radius: 10px;
+
+    font-weight: 600;
+
+    transition: 0.3s ease;
+}
+
+.career-card-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(79, 70, 229, 0.25);
+}
+
+
+/* ================= STEP CARDS ================= */
+
+.step-card {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+.step-card:hover {
+    transform: translateY(-8px);
+}
+
+
+/* ================= CATEGORY CARDS ================= */
+
+.category-card {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+.category-card:hover {
+    transform: translateY(-8px);
+}
+
+
+/* ================= COMMON UTILITY SECTIONS ================= */
+
+.utility-section,
+.assessment-section,
+.resources-section,
+.get-started-section,
+.login-section,
+.about-section,
+.policy-section {
+
+    padding: 100px 8%;
+
+    background: #f8fafc;
+}
+
+
+/* ================= SECTION HEADING ================= */
+
+.utility-section .section-heading,
+.assessment-section .section-heading,
+.resources-section .section-heading,
+.get-started-section .section-heading,
+.login-section .section-heading,
+.about-section .section-heading,
+.policy-section .section-heading {
+
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto 50px;
+}
+
+.utility-section .section-heading span,
+.assessment-section .section-heading span,
+.resources-section .section-heading span,
+.get-started-section .section-heading span,
+.login-section .section-heading span,
+.about-section .section-heading span,
+.policy-section .section-heading span {
+
+    color: #4f46e5;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.utility-section .section-heading h2,
+.assessment-section .section-heading h2,
+.resources-section .section-heading h2,
+.get-started-section .section-heading h2,
+.login-section .section-heading h2,
+.about-section .section-heading h2,
+.policy-section .section-heading h2 {
+
+    font-size: 38px;
+    color: #0f172a;
+    margin: 12px 0;
+}
+
+.utility-section .section-heading p,
+.assessment-section .section-heading p,
+.resources-section .section-heading p,
+.get-started-section .section-heading p,
+.login-section .section-heading p,
+.about-section .section-heading p,
+.policy-section .section-heading p {
+
+    color: #64748b;
+    line-height: 1.7;
+}
+
+
+/* ================= UTILITY CARDS ================= */
+
+.utility-grid {
+
+    max-width: 1100px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+
+.utility-card {
+
+    display: block;
+
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 18px;
+
+    border: 1px solid #e2e8f0;
+
+    text-decoration: none;
+    color: inherit;
+
+    box-shadow: 0 8px 25px rgba(15, 23, 42, 0.05);
+
+    transition: 0.3s ease;
+}
+
+
+.utility-card:hover {
+
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 18px 40px rgba(15, 23, 42, 0.10);
+
+}
+
+
+.utility-card > span {
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 55px;
+    height: 55px;
+
+    background: #eef2ff;
+
+    border-radius: 14px;
+
+    font-size: 25px;
+
+    margin-bottom: 20px;
+}
+
+
+.utility-card h3 {
+
+    color: #0f172a;
+
+    margin-bottom: 10px;
+
+    font-size: 20px;
+}
+
+
+.utility-card p {
+
+    color: #64748b;
+
+    line-height: 1.6;
+
+    margin-bottom: 20px;
+}
+
+
+.utility-card strong {
+
+    color: #4f46e5;
+
+    font-size: 14px;
+}
+
+
+/* ================= ASSESSMENT ================= */
+
+.assessment-section {
+
+    background: white;
+}
+
+
+.assessment-box {
+
+    max-width: 800px;
+
+    margin: auto;
+
+    background: #f8fafc;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 20px;
+
+    padding: 40px;
+
+    box-shadow:
+        0 15px 40px rgba(15, 23, 42, 0.06);
+}
+
+
+.assessment-box h3 {
+
+    text-align: center;
+
+    color: #0f172a;
+
+    margin-bottom: 25px;
+
+    font-size: 22px;
+}
+
+
+/* Hide radio buttons */
+
+.assessment-box input {
+
+    display: none;
+}
+
+
+/* Assessment choices */
+
+.assessment-options {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 15px;
+}
+
+
+.assessment-options label {
+
+    background: white;
+
+    border: 2px solid #e2e8f0;
+
+    border-radius: 12px;
+
+    padding: 18px;
+
+    cursor: pointer;
+
+    color: #334155;
+
+    font-weight: 600;
+
+    transition: 0.3s ease;
+}
+
+
+.assessment-options label:hover {
+
+    border-color: #4f46e5;
+
+    transform: translateY(-2px);
+}
+
+
+/* Selected assessment option */
+
+#interest-tech:checked ~ .assessment-options label[for="interest-tech"],
+#interest-data:checked ~ .assessment-options label[for="interest-data"],
+#interest-design:checked ~ .assessment-options label[for="interest-design"],
+#interest-business:checked ~ .assessment-options label[for="interest-business"] {
+
+    background: #4f46e5;
+
+    color: white;
+
+    border-color: #4f46e5;
+}
+
+
+/* ================= ASSESSMENT RESULTS ================= */
+
+.assessment-result {
+
+    display: none;
+
+    margin-top: 25px;
+
+    padding: 25px;
+
+    background: white;
+
+    border-radius: 14px;
+
+    border-left: 4px solid #4f46e5;
+}
+
+
+.assessment-result strong {
+
+    color: #0f172a;
+
+    font-size: 18px;
+}
+
+
+.assessment-result p {
+
+    color: #64748b;
+
+    line-height: 1.6;
+
+    margin: 8px 0 15px;
+}
+
+
+.assessment-result a {
+
+    display: inline-block;
+
+    color: #4f46e5;
+
+    font-weight: 700;
+
+    text-decoration: none;
+}
+
+
+/* Show correct result */
+
+#interest-tech:checked ~ .result-tech {
+    display: block;
+}
+
+#interest-data:checked ~ .result-data {
+    display: block;
+}
+
+#interest-design:checked ~ .result-design {
+    display: block;
+}
+
+#interest-business:checked ~ .result-business {
+    display: block;
+}
+
+
+/* ================= FORMS ================= */
+
+.profile-form {
+
+    max-width: 650px;
+
+    margin: auto;
+
+    background: white;
+
+    padding: 35px;
+
+    border-radius: 20px;
+
+    border: 1px solid #e2e8f0;
+
+    box-shadow:
+        0 15px 40px rgba(15, 23, 42, 0.06);
+
+    display: grid;
+
+    gap: 16px;
+}
+
+
+.profile-form input,
+.profile-form select {
+
+    width: 100%;
+
+    padding: 14px 16px;
+
+    border: 1px solid #cbd5e1;
+
+    border-radius: 10px;
+
+    font-size: 15px;
+
+    outline: none;
+
+    background: white;
+
+    color: #0f172a;
+
+    transition: 0.2s ease;
+
+    box-sizing: border-box;
+}
+
+
+.profile-form input:focus,
+.profile-form select:focus {
+
+    border-color: #4f46e5;
+
+    box-shadow:
+        0 0 0 3px rgba(79, 70, 229, 0.10);
+}
+
+
+.profile-form button {
+
+    border: none;
+
+    padding: 14px 20px;
+
+    border-radius: 10px;
+
+    background: linear-gradient(
+        135deg,
+        #4f46e5,
+        #7c3aed
+    );
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+
+.profile-form button:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 25px rgba(79, 70, 229, 0.25);
+}
+
+
+/* ================= FORM SUCCESS ================= */
+
+.form-success {
+
+    display: none;
+
+    max-width: 650px;
+
+    margin: 25px auto 0;
+
+    padding: 25px;
+
+    background: #f0fdf4;
+
+    border: 1px solid #bbf7d0;
+
+    border-radius: 15px;
+
+    text-align: center;
+}
+
+
+.form-success strong {
+
+    display: block;
+
+    color: #166534;
+
+    font-size: 18px;
+
+    margin-bottom: 8px;
+}
+
+
+.form-success p {
+
+    color: #475569;
+
+    margin-bottom: 15px;
+}
+
+
+.form-success a {
+
+    color: #4f46e5;
+
+    font-weight: 700;
+
+    text-decoration: none;
+}
+
+
+/* Show success message after form submission */
+
+#profile-created:target {
+
+    display: block;
+}
+
+
+#logged-in:target {
+
+    display: block;
+}
+
+
+/* ================= LOGIN ================= */
+
+.login-section {
+
+    background: #f8fafc;
+}
+
+
+.login-form {
+
+    max-width: 450px;
+}
+
+
+/* ================= ABOUT ================= */
+
+.about-section {
+
+    background: white;
+
+    min-height: 350px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+/* ================= POLICY ================= */
+
+.policy-section {
+
+    padding-top: 70px;
+
+    padding-bottom: 70px;
+
+    background: #f8fafc;
+}
+
+
+/* ================= FOCUS ACCESSIBILITY ================= */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+label:focus-visible {
+
+    outline: 3px solid rgba(79, 70, 229, 0.35);
+
+    outline-offset: 3px;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+
+    .utility-grid {
+
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+    .assessment-options {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .utility-section,
+    .assessment-section,
+    .resources-section,
+    .get-started-section,
+    .login-section,
+    .about-section,
+    .policy-section {
+
+        padding-left: 5%;
+        padding-right: 5%;
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .utility-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .utility-section .section-heading h2,
+    .assessment-section .section-heading h2,
+    .resources-section .section-heading h2,
+    .get-started-section .section-heading h2,
+    .login-section .section-heading h2,
+    .about-section .section-heading h2,
+    .policy-section .section-heading h2 {
+
+        font-size: 30px;
+
+    }
+
+    .assessment-box {
+
+        padding: 25px 18px;
+
+    }
+
+    .profile-form {
+
+        padding: 25px 18px;
+
+    }
+
+}
+/* =========================================================
+   CAREERLY - FINAL UI POLISH
+   Small improvements only - existing design preserved
+   ========================================================= */
+
+
+/* =========================
+   SMOOTH INTERACTION
+========================= */
+
+.navbar nav a,
+.login-btn,
+.signup-btn,
+.primary-btn,
+.secondary-btn,
+.step-card,
+.category-card,
+.utility-card,
+.career-card-btn {
+    transition:
+        color 0.25s ease,
+        background-color 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+/* =========================
+   LOGIN HOVER
+========================= */
+
+.login-btn {
+    transition: 0.25s ease;
+}
+
+.login-btn:hover {
+    color: #4f46e5;
+}
+
+
+/* =========================
+   NAVBAR ACTIVE / HOVER
+========================= */
+
+.navbar nav a {
+    position: relative;
+}
+
+.navbar nav a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -7px;
+
+    width: 0;
+    height: 2px;
+
+    border-radius: 10px;
+
+    background: #4f46e5;
+
+    transition: width 0.25s ease;
+}
+
+.navbar nav a:hover::after,
+.navbar nav a.active::after {
+    width: 100%;
+}
+
+
+/* =========================
+   CAREER CARD BUTTON
+========================= */
+
+.career-card-btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.career-card-btn::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -100%;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(255, 255, 255, 0.12);
+
+    transition: left 0.35s ease;
+}
+
+.career-card-btn:hover::before {
+    left: 100%;
+}
+
+
+/* =========================
+   CARD HOVER POLISH
+========================= */
+
+.step-card:hover,
+.category-card:hover,
+.utility-card:hover {
+    box-shadow:
+        0 20px 45px rgba(15, 23, 42, 0.10);
+}
+
+
+/* =========================
+   HERO CARD HOVER
+========================= */
+
+.career-card:hover {
+    box-shadow:
+        0 35px 80px rgba(15, 23, 42, 0.15);
+}
+
+
+/* =========================
+   SECTION ENTRANCE
+========================= */
+
+.how-section,
+.categories-section,
+.utility-section,
+.assessment-section,
+.resources-section,
+.get-started-section,
+.login-section,
+.about-section,
+.policy-section {
+    animation: sectionFade 0.7s ease both;
+}
+
+@keyframes sectionFade {
+
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================
+   FORM INPUT POLISH
+========================= */
+
+.profile-form input:hover,
+.profile-form select:hover {
+    border-color: #a5b4fc;
+}
+
+
+/* =========================
+   ASSESSMENT OPTION POLISH
+========================= */
+
+.assessment-options label {
+    position: relative;
+    overflow: hidden;
+}
+
+.assessment-options label:active {
+    transform: scale(0.98);
+}
+
+
+/* =========================
+   CTA BUTTON POLISH
+========================= */
+
+.cta .primary-btn {
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.cta .primary-btn:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 30px rgba(15, 23, 42, 0.20);
+}
+
+
+/* =========================
+   FOOTER POLISH
+========================= */
+
+.footer-column a {
+    position: relative;
+    width: fit-content;
+}
+
+.footer-column a:hover {
+    transform: translateX(3px);
+}
+
+
+/* =========================
+   MOBILE POLISH
+========================= */
+
+@media (max-width: 600px) {
+
+    .hero-badge {
+        font-size: 12px;
+    }
+
+    .hero-content > p {
+        font-size: 15px;
+    }
+
+    .hero-stats {
+        flex-wrap: wrap;
+    }
+
+    .hero-stats div {
+        min-width: 85px;
+    }
+
+    .floating-card {
+        padding: 10px 12px;
+    }
+
+    .floating-card span {
+        font-size: 18px;
+    }
+
+    .floating-card strong {
+        font-size: 11px;
+    }
+
+    .floating-card small {
+        font-size: 9px;
+    }
+
+    .career-card {
+        padding: 22px;
+    }
+
+}
+
+
+/* =========================
+   ACCESSIBILITY
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+}

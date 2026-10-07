@@ -1,0 +1,1195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Careerly | Career Paths</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f8fafc;
+            color: #0f172a;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        button,
+        input {
+            font-family: inherit;
+        }
+
+
+        /* NAVBAR */
+
+        .navbar {
+            height: 75px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 8%;
+
+            background: white;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .logo {
+            font-size: 27px;
+            font-weight: 800;
+        }
+
+        .logo span {
+            color: #4f46e5;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        nav a {
+            color: #475569;
+            font-size: 14px;
+            font-weight: 600;
+            transition: 0.3s ease;
+        }
+
+        nav a:hover,
+        nav .active {
+            color: #4f46e5;
+        }
+
+        .login:hover {
+            background: #eef2ff;
+            border-color: #c7d2fe;
+        }
+
+        .get-started:hover {
+            background: #4338ca;
+            transform: translateY(-1px);
+        }
+
+        .nav-buttons {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .login {
+            padding: 10px 18px;
+            color: #4f46e5;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 600;
+            transition: 0.3s ease;
+        }
+
+        .get-started {
+            padding: 10px 18px;
+
+            color: white;
+            background: #4f46e5;
+
+            border-radius: 10px;
+
+            font-size: 14px;
+            font-weight: 600;
+            transition: 0.3s ease;
+        }
+
+
+        /* HERO */
+
+        .hero {
+            padding: 90px 8% 80px;
+
+            text-align: center;
+
+            background:
+                radial-gradient(
+                    circle at 50% 0%,
+                    rgba(124, 58, 237, 0.18),
+                    transparent 45%
+                ),
+                #f8fafc;
+        }
+
+        .badge {
+            display: inline-block;
+
+            padding: 8px 16px;
+
+            color: #5b21b6;
+            background: #ede9fe;
+
+            border-radius: 30px;
+
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 1.5px;
+        }
+
+        .hero h1 {
+            margin-top: 20px;
+
+            font-size: 60px;
+            line-height: 1.05;
+
+            letter-spacing: -3px;
+        }
+
+        .hero h1 span {
+            display: block;
+
+            background: linear-gradient(
+                90deg,
+                #4f46e5,
+                #9333ea
+            );
+
+            background-clip: text;
+            -webkit-background-clip: text;
+
+            color: transparent;
+        }
+
+        .hero p {
+            max-width: 650px;
+
+            margin: 22px auto 0;
+
+            color: #64748b;
+
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+
+        /* SEARCH */
+
+        .search-area {
+            padding: 0 8% 70px;
+        }
+
+        .search-box {
+            max-width: 850px;
+
+            margin: auto;
+
+            display: flex;
+            align-items: center;
+
+            padding: 8px 8px 8px 20px;
+
+            background: white;
+
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+
+            box-shadow: 0 15px 35px rgba(15, 23, 42, 0.08);
+        }
+
+        .search-box input {
+            flex: 1;
+
+            padding: 14px;
+
+            border: none;
+            outline: none;
+
+            font-size: 14px;
+        }
+
+        .search-box button {
+            padding: 13px 25px;
+
+            border: none;
+            border-radius: 8px;
+
+            color: white;
+            background: linear-gradient(
+                135deg,
+                #4f46e5,
+                #7c3aed
+            );
+
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+
+        /* CAREERS */
+
+        .careers {
+            padding: 85px 8%;
+
+            background: white;
+        }
+
+        .section-title {
+            color: #4f46e5;
+
+            font-size: 11px;
+            font-weight: bold;
+
+            letter-spacing: 2px;
+        }
+
+        .careers h2 {
+            margin-top: 8px;
+
+            font-size: 38px;
+        }
+
+        .intro {
+            margin-top: 10px;
+
+            color: #64748b;
+        }
+
+
+        /* FILTERS */
+
+        .filters {
+            display: flex;
+            gap: 10px;
+
+            margin: 35px 0;
+
+            flex-wrap: wrap;
+        }
+
+        .filter {
+            padding: 10px 18px;
+
+            border: 1px solid #e2e8f0;
+            border-radius: 25px;
+
+            background: white;
+
+            color: #64748b;
+
+            cursor: pointer;
+        }
+
+        .filter.active,
+        .filter:hover {
+            color: white;
+            background: #4f46e5;
+            border-color: #4f46e5;
+        }
+
+
+        /* GRID */
+
+        .career-grid {
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 22px;
+        }
+
+
+        /* CARD */
+
+        .career-card {
+            padding: 27px;
+
+            background: white;
+
+            border: 1px solid #e2e8f0;
+            border-radius: 17px;
+
+            transition: 0.3s;
+        }
+
+        .career-card:hover {
+            transform: translateY(-7px);
+
+            border-color: #a78bfa;
+
+            box-shadow:
+                0 20px 45px rgba(15, 23, 42, 0.10);
+        }
+
+        .card-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+
+        /* ICON */
+
+        .icon {
+            width: 52px;
+            height: 52px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 14px;
+
+            font-size: 17px;
+            font-weight: bold;
+        }
+
+        .purple {
+            color: #4f46e5;
+            background: #eef2ff;
+        }
+
+        .blue {
+            color: #0891b2;
+            background: #cffafe;
+        }
+
+        .pink {
+            color: #db2777;
+            background: #fce7f3;
+        }
+
+        .orange {
+            color: #ea580c;
+            background: #ffedd5;
+        }
+
+        .green {
+            color: #15803d;
+            background: #dcfce7;
+        }
+
+        .violet {
+            color: #9333ea;
+            background: #f3e8ff;
+        }
+
+
+        /* DEMAND */
+
+        .demand {
+            padding: 6px 10px;
+
+            color: #15803d;
+            background: #dcfce7;
+
+            border-radius: 20px;
+
+            font-size: 10px;
+            font-weight: bold;
+        }
+
+
+        /* CARD TEXT */
+
+        .career-card h3 {
+            margin-top: 22px;
+
+            font-size: 20px;
+        }
+
+        .career-card p {
+            min-height: 65px;
+
+            margin-top: 8px;
+
+            color: #64748b;
+
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+
+        /* SKILLS */
+
+        .skills {
+            display: flex;
+            gap: 7px;
+
+            margin-top: 18px;
+
+            flex-wrap: wrap;
+        }
+
+        .skills span {
+            padding: 6px 9px;
+
+            color: #475569;
+            background: #f1f5f9;
+
+            border-radius: 6px;
+
+            font-size: 10px;
+        }
+
+
+        /* INFO */
+
+        .info {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 15px;
+
+            margin-top: 22px;
+            padding-top: 18px;
+
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .info small {
+            display: block;
+
+            color: #94a3b8;
+
+            font-size: 10px;
+        }
+
+        .info strong {
+            display: block;
+
+            margin-top: 3px;
+
+            font-size: 13px;
+        }
+
+
+        /* BUTTON */
+
+        .view {
+            display: block;
+
+            margin-top: 22px;
+            padding: 11px;
+
+            text-align: center;
+
+            color: #4f46e5;
+            background: #eef2ff;
+
+            border-radius: 8px;
+
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .view:hover {
+            color: white;
+            background: #4f46e5;
+        }
+
+
+        /* CTA */
+
+        .cta {
+            margin: 80px 8%;
+
+            padding: 70px 30px;
+
+            text-align: center;
+
+            border-radius: 25px;
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #312e81,
+                    #6d28d9
+                );
+        }
+
+        .cta small {
+            color: #ddd6fe;
+
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .cta h2 {
+            margin-top: 10px;
+
+            font-size: 38px;
+        }
+
+        .cta p {
+            max-width: 550px;
+
+            margin: 12px auto 25px;
+
+            color: #ddd6fe;
+        }
+
+        .cta a {
+            display: inline-block;
+
+            padding: 13px 23px;
+
+            color: #4f46e5;
+            background: white;
+
+            border-radius: 8px;
+
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+
+        /* FOOTER */
+
+        footer {
+            display: grid;
+
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+
+            gap: 40px;
+
+            padding: 65px 8%;
+
+            color: white;
+            background: #0f172a;
+        }
+
+        footer p {
+            margin-top: 15px;
+
+            color: #94a3b8;
+
+            font-size: 13px;
+        }
+
+        footer h4 {
+            margin-bottom: 12px;
+        }
+
+        footer a {
+            display: block;
+
+            margin-bottom: 9px;
+
+            color: #94a3b8;
+
+            font-size: 13px;
+        }
+
+        footer a:hover {
+            color: white;
+        }
+
+
+        /* RESPONSIVE */
+
+        @media (max-width: 950px) {
+
+            nav {
+                display: none;
+            }
+
+            .career-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .navbar {
+                padding: 0 5%;
+            }
+
+            .login {
+                display: none;
+            }
+
+            .hero {
+                padding: 70px 5%;
+            }
+
+            .hero h1 {
+                font-size: 44px;
+            }
+
+            .search-area,
+            .careers {
+                padding-left: 5%;
+                padding-right: 5%;
+            }
+
+            .career-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta {
+                margin: 50px 5%;
+            }
+
+            footer {
+                grid-template-columns: 1fr 1fr;
+                padding: 50px 5%;
+            }
+
+        }
+        /* CATEGORY FILTER */
+
+.filters input {
+    display: none;
+}
+
+.filters .filter {
+    display: inline-block;
+}
+
+.filters input:checked + .filter {
+    color: white;
+    background: #4f46e5;
+    border-color: #4f46e5;
+}
+
+
+/* HIDE CARDS BASED ON CATEGORY */
+
+/* Technology */
+
+#technology:checked ~ .career-grid .data-card,
+#technology:checked ~ .career-grid .design-card,
+#technology:checked ~ .career-grid .business-card {
+    display: none;
+}
+
+
+/* Data */
+
+#data:checked ~ .career-grid .tech-card,
+#data:checked ~ .career-grid .design-card,
+#data:checked ~ .career-grid .business-card {
+    display: none;
+}
+
+
+/* Design */
+
+#design:checked ~ .career-grid .tech-card,
+#design:checked ~ .career-grid .data-card,
+#design:checked ~ .career-grid .business-card {
+    display: none;
+}
+
+
+/* Business */
+
+#business:checked ~ .career-grid .tech-card,
+#business:checked ~ .career-grid .data-card,
+#business:checked ~ .career-grid .design-card {
+    display: none;
+}
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- NAVBAR -->
+
+    <header class="navbar">
+
+        <a href="index.html" class="logo">
+            <span>✦</span> Careerly
+        </a>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="carrers.html" class="active">Career Paths</a>
+            <a href="jobs.html">Jobs</a>
+            <a href="assessment.html">Assessment</a>
+            <a href="#">Resources</a>
+        </nav>
+
+        <div class="nav-buttons">
+            <a href="#" class="login">Login</a>
+            <a href="#" class="get-started">Get Started</a>
+        </div>
+
+    </header>
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="badge">
+            EXPLORE YOUR FUTURE
+        </div>
+
+        <h1>
+            Discover a career
+            <span>made for you.</span>
+        </h1>
+
+        <p>
+            Explore career paths based on your interests, skills
+            and goals. Find out what each career requires and
+            where it can take you.
+        </p>
+
+    </section>
+
+
+    <!-- SEARCH -->
+
+    <section class="search-area">
+
+        <div class="search-box">
+
+            <span>⌕</span>
+
+            <input
+                type="text"
+                placeholder="Search for a career..."
+            >
+
+            <button>Search</button>
+
+        </div>
+
+    </section>
+
+
+    <!-- CAREERS -->
+
+    <section class="careers">
+
+        <span class="section-title">
+            CAREER EXPLORER
+        </span>
+
+        <h2>Explore career paths</h2>
+
+        <p class="intro">
+            Discover careers across technology, data, design and business.
+        </p>
+
+
+        <div class="filters">
+
+    <input type="radio" name="category" id="all" checked>
+    <label for="all" class="filter">All Careers</label>
+
+    <input type="radio" name="category" id="technology">
+    <label for="technology" class="filter">Technology</label>
+
+    <input type="radio" name="category" id="data">
+    <label for="data" class="filter">Data</label>
+
+    <input type="radio" name="category" id="design">
+    <label for="design" class="filter">Design</label>
+
+    <input type="radio" name="category" id="business">
+    <label for="business" class="filter">Business</label>
+
+</div>
+
+        <div class="career-grid">
+
+
+            <!-- SOFTWARE -->
+
+<div class="career-card tech-card">
+                <div class="card-top">
+
+                    <div class="icon purple">
+                        &lt;/&gt;
+                    </div>
+
+                    <span class="demand">
+                        High Demand
+                    </span>
+
+                </div>
+
+                <h3>Software Engineer</h3>
+
+                <p>
+                    Build applications, solve technical problems
+                    and create software products.
+                </p>
+
+                <div class="skills">
+                    <span>Java</span>
+                    <span>DSA</span>
+                    <span>Problem Solving</span>
+                </div>
+
+                <div class="info">
+
+                    <div>
+                        <small>Average Salary</small>
+                        <strong>₹8–15 LPA</strong>
+                    </div>
+
+                    <div>
+                        <small>Growth</small>
+                        <strong>Very High</strong>
+                    </div>
+
+                </div>
+
+                <a href="jobs.html" class="view">
+                    View Career →
+                </a>
+
+            </div>
+
+
+            <!-- DATA -->
+
+<div class="career-card data-card">
+                <div class="card-top">
+
+                    <div class="icon blue">
+                        ▥
+                    </div>
+
+                    <span class="demand">
+                        High Demand
+                    </span>
+
+                </div>
+
+                <h3>Data Analyst</h3>
+
+                <p>
+                    Analyze data, identify patterns and help
+                    organizations make better decisions.
+                </p>
+
+                <div class="skills">
+                    <span>SQL</span>
+                    <span>Python</span>
+                    <span>Excel</span>
+                </div>
+
+                <div class="info">
+
+                    <div>
+                        <small>Average Salary</small>
+                        <strong>₹6–12 LPA</strong>
+                    </div>
+
+                    <div>
+                        <small>Growth</small>
+                        <strong>High</strong>
+                    </div>
+
+                </div>
+
+                <a href="jobs.html" class="view">
+                    View Career →
+                </a>
+
+            </div>
+
+
+            <!-- AI -->
+
+<div class="career-card tech-card">
+                <div class="card-top">
+
+                    <div class="icon violet">
+                        AI
+                    </div>
+
+                    <span class="demand">
+                        Growing
+                    </span>
+
+                </div>
+
+                <h3>AI Engineer</h3>
+
+                <p>
+                    Develop intelligent systems using artificial
+                    intelligence and machine learning.
+                </p>
+
+                <div class="skills">
+                    <span>Python</span>
+                    <span>ML</span>
+                    <span>AI</span>
+                </div>
+
+                <div class="info">
+
+                    <div>
+                        <small>Average Salary</small>
+                        <strong>₹10–20 LPA</strong>
+                    </div>
+
+                    <div>
+                        <small>Growth</small>
+                        <strong>Very High</strong>
+                    </div>
+
+                </div>
+
+                <a href="jobs.html" class="view">
+                    View Career →
+                </a>
+
+            </div>
+
+
+            <!-- DESIGN -->
+
+<div class="career-card design-card">
+                <div class="card-top">
+
+                    <div class="icon pink">
+                        ✦
+                    </div>
+
+                    <span class="demand">
+                        Growing
+                    </span>
+
+                </div>
+
+                <h3>UI/UX Designer</h3>
+
+                <p>
+                    Create intuitive and engaging digital
+                    experiences for users.
+                </p>
+
+                <div class="skills">
+                    <span>Figma</span>
+                    <span>UI Design</span>
+                    <span>UX</span>
+                </div>
+
+                <div class="info">
+
+                    <div>
+                        <small>Average Salary</small>
+                        <strong>₹5–10 LPA</strong>
+                    </div>
+
+                    <div>
+                        <small>Growth</small>
+                        <strong>High</strong>
+                    </div>
+
+                </div>
+
+                <a href="jobs.html" class="view">
+                    View Career →
+                </a>
+
+            </div>
+
+
+            <!-- CLOUD -->
+
+<div class="career-card tech-card">
+                <div class="card-top">
+
+                    <div class="icon green">
+                        ☁
+                    </div>
+
+                    <span class="demand">
+                        High Demand
+                    </span>
+
+                </div>
+
+                <h3>Cloud Engineer</h3>
+
+                <p>
+                    Build and manage scalable cloud infrastructure
+                    and modern computing systems.
+                </p>
+
+                <div class="skills">
+                    <span>AWS</span>
+                    <span>Linux</span>
+                    <span>DevOps</span>
+                </div>
+
+                <div class="info">
+
+                    <div>
+                        <small>Average Salary</small>
+                        <strong>₹8–16 LPA</strong>
+                    </div>
+
+                    <div>
+                        <small>Growth</small>
+                        <strong>Very High</strong>
+                    </div>
+
+                </div>
+
+                <a href="jobs.html" class="view">
+                    View Career →
+                </a>
+
+            </div>
+
+
+            <!-- PRODUCT -->
+
+<div class="career-card business-card">
+                <div class="card-top">
+
+                    <div class="icon orange">
+                        ↗
+                    </div>
+
+                    <span class="demand">
+                        Popular
+                    </span>
+
+                </div>
+
+                <h3>Product Manager</h3>
+
+                <p>
+                    Lead product strategy and work with teams
+                    to build products users love.
+                </p>
+
+                <div class="skills">
+                    <span>Strategy</span>
+                    <span>Leadership</span>
+                    <span>Analytics</span>
+                </div>
+
+                <div class="info">
+
+                    <div>
+                        <small>Average Salary</small>
+                        <strong>₹10–18 LPA</strong>
+                    </div>
+
+                    <div>
+                        <small>Growth</small>
+                        <strong>High</strong>
+                    </div>
+
+                </div>
+
+                <a href="jobs.html" class="view">
+                    View Career →
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- CTA -->
+
+    <section class="cta">
+
+        <small>
+            NOT SURE WHERE TO START?
+        </small>
+
+        <h2>
+            Discover your perfect career.
+        </h2>
+
+        <p>
+            Take our career assessment and discover careers
+            that match your interests and strengths.
+        </p>
+
+        <a href="assessment.html">
+            Take Assessment →
+        </a>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div>
+
+            <a href="index.html" class="logo">
+                <span>✦</span> Careerly
+            </a>
+
+            <p>
+                Discover your path.<br>
+                Build your future.
+            </p>
+
+        </div>
+
+        <div>
+
+            <h4>Platform</h4>
+
+            <a href="index.html">Home</a>
+            <a href="carrers.html">Career Paths</a>
+            <a href="jobs.html">Jobs</a>
+            <a href="assessment.html">Assessment</a>
+
+        </div>
+
+        <div>
+
+            <h4>Company</h4>
+
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+            <a href="#">Support</a>
+
+        </div>
+
+        <div>
+
+            <h4>Legal</h4>
+
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+            <a href="#">FAQs</a>
+
+        </div>
+
+    </footer>
+
+
+</body>
+</html>
