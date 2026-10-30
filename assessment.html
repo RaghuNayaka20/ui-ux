@@ -50,7 +50,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-
+            gap: 24px;
             background: white;
 
             border-bottom: 1px solid #e2e8f0;
@@ -89,10 +89,12 @@
         }
 
         .nav-buttons {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-left: auto;
+    flex-shrink: 0;
+}
 
         .login-btn {
             padding: 10px 18px;
@@ -770,6 +772,476 @@
             }
 
         }
+        
+/* =====================================
+   ASSESSMENT PAGE - MATCH HOME NAVBAR
+===================================== */
+
+.navbar {
+    width: 100%;
+    min-height: 76px;
+    padding: 14px 5.3%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    background: #ffffff;
+    border-bottom: 1px solid #eee8fa;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar > .logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    flex-shrink: 0;
+    color: #171536;
+    font-size: 27px;
+    font-weight: 800;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.navbar > .logo span {
+    color: #5945f5;
+}
+
+.navbar .main-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 23px;
+    flex: 1;
+}
+
+.navbar .main-nav a {
+    padding: 10px 0;
+    color: #64748b;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: color 0.2s ease;
+}
+
+.navbar .main-nav a:hover,
+.navbar .main-nav a.active {
+    color: #5945f5;
+}
+
+.navbar .nav-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.navbar .account-menu {
+    position: relative;
+}
+
+.navbar .account-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    min-height: 43px;
+    padding: 9px 14px;
+    background: #ffffff;
+    color: #403653;
+    border: 1px solid #a58aff;
+    border-radius: 24px;
+    font-size: 13px;
+    font-weight: 700;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.navbar .account-avatar,
+.navbar .account-arrow {
+    color: #7042d0;
+}
+
+.navbar .account-button:hover,
+.navbar .account-menu:focus-within .account-button {
+    background: #f5f1ff;
+    border-color: #7042d0;
+}
+
+.navbar .signup-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 43px;
+    padding: 0 19px;
+    background: #6c4cf1;
+    color: #ffffff;
+    border: 1px solid #6c4cf1;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.navbar .signup-btn:hover {
+    background: #5838d8;
+    border-color: #5838d8;
+    color: #ffffff;
+    transform: translateY(-1px);
+}
+
+/* Account dropdown */
+.navbar .account-dropdown {
+    display: block;
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    z-index: 1100;
+    width: 255px;
+    max-width: calc(100vw - 24px);
+    padding: 10px;
+    background: #ffffff;
+    border: 1px solid #e9e1fa;
+    border-radius: 15px;
+    box-shadow: 0 16px 40px rgba(56, 35, 94, 0.16);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(8px);
+    transition: opacity 0.2s ease, transform 0.2s ease,
+                visibility 0.2s ease;
+}
+
+.navbar .account-menu:hover .account-dropdown,
+.navbar .account-menu:focus-within .account-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.navbar .account-heading {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    padding: 12px;
+}
+
+.navbar .account-heading strong {
+    color: #30264b;
+    font-size: 15px;
+}
+
+.navbar .account-heading span {
+    color: #827790;
+    font-size: 12px;
+}
+
+.navbar .account-dropdown > a {
+    display: block;
+    padding: 10px 12px;
+    color: #403653;
+    border-radius: 8px;
+    font-size: 13px;
+    text-decoration: none;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.navbar .account-dropdown > a:hover {
+    background: #f2edff;
+    color: #7042d0;
+}
+
+.navbar .account-divider {
+    height: 1px;
+    margin: 8px 4px;
+    background: #eee8fa;
+}
+
+/* Responsive navbar */
+@media (max-width: 1050px) {
+    .navbar {
+        flex-wrap: wrap;
+        gap: 12px 18px;
+    }
+
+    .navbar .main-nav {
+        gap: 14px;
+    }
+}
+
+@media (max-width: 900px) {
+    .navbar .main-nav {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        padding: 12px 5%;
+        justify-content: center;
+    }
+
+    .navbar > .logo {
+        font-size: 24px;
+    }
+
+    .navbar .main-nav {
+        width: 100%;
+        order: 3;
+        justify-content: center;
+        gap: 8px 16px;
+    }
+
+    .navbar .main-nav a {
+        font-size: 12px;
+    }
+
+    .navbar .nav-actions {
+        gap: 6px;
+    }
+
+    .navbar .account-button {
+        min-height: 39px;
+        padding: 8px 11px;
+    }
+
+    .navbar .signup-btn {
+        min-height: 39px;
+        padding: 0 13px;
+    }
+}
+
+/* ==========================================
+   CAREERLY ASSESSMENT — LAVENDER POLISH
+   Matches the Jobs page color theme
+========================================== */
+
+/* Main page background */
+body {
+    background: #faf8ff;
+    color: #21183d;
+}
+
+/* Hero section */
+.assessment-hero {
+    padding: 78px 20px 65px;
+    background:
+        radial-gradient(
+            ellipse at 75% 10%,
+            rgba(208, 190, 255, 0.45),
+            transparent 48%
+        ),
+        linear-gradient(
+            120deg,
+            #f7f2ff 0%,
+            #f0e8ff 55%,
+            #eee5ff 100%
+        );
+}
+
+.assessment-hero .hero-badge {
+    background: #ffffff;
+    color: #7042d0;
+    border: 1px solid #e3d5ff;
+    box-shadow: 0 5px 18px rgba(112, 66, 208, 0.06);
+}
+
+.assessment-hero h1 {
+    color: #21183d;
+    letter-spacing: -1.5px;
+}
+
+.assessment-hero h1 span {
+    color: #7042d0;
+}
+
+.assessment-hero p {
+    color: #6d6482;
+    line-height: 1.75;
+}
+
+/* Assessment section background and spacing */
+.assessment-container {
+    margin: 42px auto 95px;
+}
+
+/* Progress text */
+.progress-top {
+    color: #706581;
+}
+
+.progress-top span:first-child {
+    color: #7042d0;
+}
+
+/* Progress track and fill */
+.progress-bar {
+    height: 9px;
+    background: #e8e0f7;
+    border-radius: 20px;
+}
+
+.progress-fill {
+    background: linear-gradient(
+        90deg,
+        #5945f5,
+        #9147ed
+    );
+    box-shadow: 0 2px 8px rgba(112, 66, 208, 0.2);
+}
+
+/* Question card */
+.question-card,
+.result-card {
+    background: #ffffff;
+    border: 1px solid #ece4fa;
+    border-radius: 24px;
+    box-shadow: 0 18px 45px rgba(70, 42, 120, 0.08);
+}
+
+.question-number {
+    color: #7042d0;
+    letter-spacing: 0.4px;
+}
+
+.question-card h2,
+.result-card h2 {
+    color: #21183d;
+    letter-spacing: -0.5px;
+}
+
+.question-description,
+.result-card > p {
+    color: #766b89;
+    line-height: 1.7;
+}
+
+/* Answer options */
+.options {
+    gap: 13px;
+}
+
+.options label {
+    background: #ffffff;
+    border: 1.5px solid #e7def6;
+    border-radius: 14px;
+    color: #403653;
+    transition:
+        border-color 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+}
+
+.options label:hover {
+    border-color: #b49af0;
+    background: #faf7ff;
+    box-shadow: 0 5px 16px rgba(112, 66, 208, 0.07);
+    transform: translateY(-1px);
+}
+
+/* Selected answer */
+.options label:has(input:checked) {
+    border-color: #7042d0;
+    background: #f4efff;
+    box-shadow: 0 5px 18px rgba(112, 66, 208, 0.10);
+}
+
+.options input:checked + span {
+    color: #7042d0;
+}
+
+/* Back button */
+.back-btn {
+    background: #ffffff;
+    color: #6e6283;
+    border: 1px solid #e5dcf3;
+    border-radius: 11px;
+}
+
+.back-btn:hover {
+    background: #f8f4ff;
+    color: #7042d0;
+    border-color: #c8b5f2;
+}
+
+/* Next and results buttons */
+.next-btn,
+.result-btn {
+    background: linear-gradient(
+        135deg,
+        #5945f5,
+        #7842d8
+    );
+    color: #ffffff;
+    border: none;
+    border-radius: 11px;
+    box-shadow: 0 5px 14px rgba(89, 69, 245, 0.15);
+}
+
+.next-btn:hover,
+.result-btn:hover {
+    background: linear-gradient(
+        135deg,
+        #4b35df,
+        #6632c5
+    );
+    box-shadow: 0 8px 20px rgba(89, 69, 245, 0.23);
+}
+
+/* Result section */
+.result-icon {
+    background: #f0e8ff;
+}
+
+.recommended-career {
+    background: linear-gradient(
+        135deg,
+        #f6f0ff,
+        #eee5ff
+    );
+    border: 1px solid #e0d0ff;
+    border-radius: 18px;
+}
+
+.recommended-career strong {
+    color: #7042d0;
+}
+
+/* Information cards below the assessment */
+.info-grid > div {
+    background: #ffffff;
+    border: 1px solid #ece4fa;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px rgba(70, 42, 120, 0.05);
+}
+
+/* Small-screen spacing */
+@media (max-width: 600px) {
+    .assessment-hero {
+        padding: 55px 18px 45px;
+    }
+
+    .assessment-container {
+        margin-top: 30px;
+    }
+
+    .question-card,
+    .result-card {
+        border-radius: 19px;
+        padding: 28px 20px;
+    }
+
+    .options label {
+        padding: 15px;
+    }
+}
 
     </style>
 
@@ -783,53 +1255,47 @@
          NAVBAR
     ========================= -->
 
-    <header class="navbar">
+<header class="navbar">
+    <a href="index.html" class="logo"><span>✦</span> Careerly</a>
 
-        <a href="index.html" class="logo">
-            <span>✦</span> Careerly
-        </a>
+    <nav class="main-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="carrers.html">Career Paths</a>
+        <a href="jobs.html">Jobs</a>
+        <a href="assessment.html" class="active" aria-current="page">Assessment</a>
+        <a href="index.html#career-roadmap">Career Guide</a>
+        <a href="index.html#about">About Us</a>
+    </nav>
 
+    <div class="nav-actions">
+        <div class="account-menu">
+            <button class="account-button" type="button"
+                    aria-label="Open account menu">
+                <span class="account-avatar">👤</span>
+                <span>Account</span>
+                <span class="account-arrow">▾</span>
+            </button>
 
-        <nav>
-
-            <a href="index.html">
-                Home
-            </a>
-
-            <a href="carrers.html">
-                Career Paths
-            </a>
-
-            <a href="jobs.html">
-                Jobs
-            </a>
-
-            <a href="assessment.html" class="active">
-                Assessment
-            </a>
-
-            <a href="index.html#resources">
-                Resources
-            </a>
-
-        </nav>
-
-
-        <div class="nav-buttons">
-
-            <a href="index.html#login"
-               class="login-btn">
-                Login
-            </a>
-
-            <a href="index.html#get-started"
-               class="signup-btn">
-                Get Started
-            </a>
-
+            <div class="account-dropdown">
+                <div class="account-heading">
+                    <strong>Your Account</strong>
+                    <span>Manage your career profile</span>
+                </div>
+                <a href="index.html#profile">👤 My Profile</a>
+                <a href="index.html#account-details">🪪 Account Details</a>
+                <a href="index.html#resume">📄 My Resume</a>
+                <a href="index.html#saved-jobs">🔖 Saved Jobs</a>
+                <a href="index.html#notifications">🔔 Notifications</a>
+                <a href="index.html#settings">⚙️ Settings</a>
+                <a href="index.html#privacy">🔒 Privacy &amp; Security</a>
+                <div class="account-divider"></div>
+                <a href="login.html" class="logout-link">↪ Log out</a>
+            </div>
         </div>
 
-    </header>
+        <a href="carrers.html" class="signup-btn">Get Started</a>
+    </div>
+</header>
 
 
 

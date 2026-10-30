@@ -1,822 +1,1380 @@
-/* =========================
-   RESET
-========================= */
+/* =========================================
+   CAREERLY - COMPLETE SHARED STYLESHEET
+   HTML + CSS ONLY
+========================================= */
 
+/* RESET */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+:root {
+    --primary: #4f46e5;
+    --primary-dark: #4338ca;
+    --purple: #8051d4;
+    --lavender: #f4f0ff;
+    --lavender-light: #faf9ff;
+    --text: #171638;
+    --muted: #64748b;
+    --border: #e8e4f2;
+    --white: #ffffff;
+    --radius: 16px;
+    --shadow: 0 12px 32px rgba(50, 35, 100, 0.08);
+}
+
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 100px;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background: #f8fafc;
-    color: #0f172a;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text);
+    background: var(--white);
     line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
 }
 
 a {
-    text-decoration: none;
     color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
 }
 
 button {
-    font-family: inherit;
+    cursor: pointer;
 }
 
+img {
+    max-width: 100%;
+    display: block;
+}
 
-/* =========================
-   NAVBAR
-========================= */
+p {
+    color: var(--muted);
+}
+
+:focus-visible {
+    outline: 3px solid #a78bfa;
+    outline-offset: 3px;
+}
+
+/* =========================================
+   SHARED NAVBAR
+========================================= */
 
 .navbar {
     width: 100%;
-    height: 75px;
-
+    min-height: 76px;
+    padding: 14px 5%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-
-    padding: 0 7%;
-
-    background: white;
-    border-bottom: 1px solid #e2e8f0;
-
+    gap: 24px;
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.97);
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 3px 16px rgba(64, 45, 120, 0.035);
+    backdrop-filter: blur(12px);
 }
 
+.navbar > .logo,
 .logo {
-    font-size: 23px;
-    font-weight: 700;
-    letter-spacing: -1px;
+    flex-shrink: 0;
+    color: var(--text);
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: -0.7px;
+    white-space: nowrap;
 }
 
 .logo span {
-    color: #4f46e5;
-    margin-right: 5px;
+    color: var(--primary);
 }
 
-.navbar nav {
-    display: flex;
-    gap: 30px;
-}
-
-.navbar nav a {
-    color: #64748b;
-    font-size: 14px;
-    font-weight: 500;
-
-    transition: 0.3s;
-}
-
-.navbar nav a:hover,
-.navbar nav .active {
-    color: #4f46e5;
-}
-
-.nav-buttons {
+.navbar > .main-nav {
     display: flex;
     align-items: center;
-    gap: 15px;
+    justify-content: center;
+    flex: 1 1 auto;
+    min-width: 0;
+    gap: clamp(12px, 1.5vw, 23px);
 }
 
+.main-nav a {
+    display: inline-flex;
+    align-items: center;
+    padding: 9px 0;
+    color: var(--muted);
+    font-size: 13px;
+    font-weight: 600;
+    white-space: nowrap;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+    color: var(--primary);
+    border-bottom-color: var(--primary);
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    flex: 0 0 auto;
+    margin-left: auto;
+}
+
+.signup-btn,
 .login-btn {
-    color: #475569;
-    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    padding: 10px 16px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 700;
+    white-space: nowrap;
+    transition: background 0.2s ease, color 0.2s ease,
+                transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .signup-btn {
-    padding: 11px 20px;
-    border-radius: 8px;
-
-    color: white;
-    background: #4f46e5;
-
-    font-size: 14px;
-    font-weight: 600;
-
-    transition: 0.3s;
+    color: var(--white);
+    background: var(--primary);
+    border: 1px solid var(--primary);
 }
 
 .signup-btn:hover {
-    background: #3730a3;
-    transform: translateY(-2px);
+    background: var(--primary-dark);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(79, 70, 229, 0.2);
 }
 
+.login-btn {
+    color: var(--primary);
+    background: var(--white);
+    border: 1px solid var(--border);
+}
 
-/* =========================
-   HERO
-========================= */
+.login-btn:hover {
+    background: var(--lavender);
+    border-color: #c7d2fe;
+}
+
+/* ACCOUNT DROPDOWN */
+
+.account-menu {
+    position: relative;
+    flex-shrink: 0;
+}
+
+.account-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    min-height: 42px;
+    padding: 9px 14px;
+    color: var(--white);
+    background: var(--purple);
+    border: 1px solid var(--purple);
+    border-radius: 24px;
+    font-size: 13px;
+    font-weight: 700;
+    white-space: nowrap;
+    transition: background 0.2s ease;
+}
+
+.account-button:hover {
+    background: #6d40bd;
+}
+
+.account-avatar {
+    font-size: 16px;
+}
+
+.account-arrow {
+    font-size: 11px;
+}
+
+.account-dropdown {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    z-index: 1100;
+    width: 255px;
+    max-width: calc(100vw - 24px);
+    padding: 10px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    box-shadow: 0 16px 40px rgba(56, 35, 94, 0.16);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(8px);
+    transition: opacity 0.2s ease, transform 0.2s ease,
+                visibility 0.2s ease;
+}
+
+.account-menu:hover .account-dropdown,
+.account-menu:focus-within .account-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.account-heading {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    padding: 12px;
+}
+
+.account-heading strong {
+    color: var(--text);
+    font-size: 15px;
+}
+
+.account-heading span {
+    color: #827790;
+    font-size: 12px;
+}
+
+.account-dropdown a {
+    display: block;
+    padding: 10px 12px;
+    border-radius: 8px;
+    color: #514466;
+    font-size: 13px;
+    transition: color 0.2s ease, background 0.2s ease;
+}
+
+.account-dropdown a:hover {
+    color: var(--purple);
+    background: var(--lavender);
+}
+
+.account-divider {
+    height: 1px;
+    margin: 6px 4px;
+    background: var(--border);
+}
+
+.account-dropdown a.logout-link {
+    color: #c44d5c;
+}
+
+.account-dropdown a.logout-link:hover {
+    background: #fff0f1;
+}
+
+/* =========================================
+   SHARED SECTION HEADINGS
+========================================= */
+
+.section-heading {
+    max-width: 760px;
+    margin: 0 auto 42px;
+    text-align: center;
+}
+
+.section-heading > span,
+.section-eyebrow {
+    display: inline-block;
+    color: var(--primary);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.section-heading h2,
+.careers-section > h2 {
+    margin-top: 10px;
+    color: var(--text);
+    font-size: clamp(28px, 3.4vw, 40px);
+    line-height: 1.2;
+    letter-spacing: -1px;
+}
+
+.section-heading p,
+.section-intro {
+    max-width: 650px;
+    margin: 14px auto 0;
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+/* =========================================
+   HOMEPAGE HERO
+========================================= */
 
 .hero {
-    min-height: 650px;
-
-    display: flex;
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
     align-items: center;
-    justify-content: space-between;
-
+    gap: 60px;
+    min-height: 590px;
     padding: 80px 8%;
-
     overflow: hidden;
-
     background:
-        radial-gradient(
-            circle at 80% 30%,
-            rgba(124, 58, 237, 0.15),
-            transparent 30%
-        ),
-        #f8fafc;
+        radial-gradient(ellipse at 80% 25%, rgba(196, 181, 253, 0.32), transparent 42%),
+        linear-gradient(115deg, #fbfaff, #f4f2ff);
 }
 
 .hero-content {
-    width: 52%;
+    max-width: 620px;
 }
 
-.hero-badge {
-    display: inline-block;
-
+.hero-badge,
+.hero-visual .match {
+    display: inline-flex;
+    align-items: center;
     padding: 8px 14px;
-
-    border-radius: 30px;
-
-    background: #ede9fe;
     color: #5b21b6;
-
-    font-size: 13px;
-    font-weight: 600;
-
-    margin-bottom: 22px;
+    background: #ede9fe;
+    border: 1px solid #ddd6fe;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 700;
 }
 
 .hero h1 {
-    font-size: clamp(48px, 6vw, 76px);
-    line-height: 1.05;
-    letter-spacing: -4px;
-
-    max-width: 700px;
+    margin-top: 22px;
+    color: var(--text);
+    font-size: clamp(42px, 5.2vw, 66px);
+    line-height: 1.06;
+    letter-spacing: -2.7px;
 }
 
 .hero h1 span {
     display: block;
-
-    background: linear-gradient(
-        90deg,
-        #4f46e5,
-        #9333ea
-    );
-
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: var(--primary);
 }
 
 .hero-content > p {
-    max-width: 570px;
-
-    margin-top: 25px;
-
-    color: #64748b;
-    font-size: 17px;
+    max-width: 550px;
+    margin-top: 22px;
+    font-size: 16px;
+    line-height: 1.8;
 }
 
 .hero-buttons {
     display: flex;
-    gap: 15px;
-
-    margin-top: 32px;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 13px;
+    margin-top: 28px;
 }
 
 .primary-btn,
 .secondary-btn {
-    display: inline-block;
-
-    padding: 14px 22px;
-
-    border-radius: 9px;
-
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 46px;
+    padding: 12px 20px;
+    border-radius: 10px;
     font-size: 14px;
-    font-weight: 600;
-
-    transition: 0.3s;
+    font-weight: 700;
+    transition: transform 0.2s ease, background 0.2s ease,
+                box-shadow 0.2s ease;
 }
 
 .primary-btn {
-    color: white;
-
-    background: linear-gradient(
-        135deg,
-        #4f46e5,
-        #7c3aed
-    );
-
-    box-shadow: 0 10px 25px rgba(79, 70, 229, 0.25);
+    color: var(--white);
+    background: var(--primary);
+    box-shadow: 0 7px 18px rgba(79, 70, 229, 0.16);
 }
 
 .primary-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 15px 30px rgba(79, 70, 229, 0.35);
+    background: var(--primary-dark);
+    transform: translateY(-2px);
 }
 
 .secondary-btn {
-    background: white;
-    border: 1px solid #e2e8f0;
+    color: var(--primary);
+    background: var(--white);
+    border: 1px solid #ddd6fe;
 }
 
 .secondary-btn:hover {
-    border-color: #4f46e5;
-    color: #4f46e5;
+    background: #f5f3ff;
+    transform: translateY(-2px);
 }
-
-
-/* =========================
-   HERO STATS
-========================= */
 
 .hero-stats {
     display: flex;
-    gap: 45px;
-
-    margin-top: 45px;
+    flex-wrap: wrap;
+    gap: 28px;
+    margin-top: 38px;
 }
 
-.hero-stats div {
+.hero-stats > div {
     display: flex;
     flex-direction: column;
+    gap: 3px;
 }
 
 .hero-stats strong {
-    font-size: 22px;
+    color: var(--text);
+    font-size: 15px;
 }
 
 .hero-stats small {
-    color: #64748b;
+    color: var(--muted);
     font-size: 12px;
 }
 
-
-/* =========================
-   HERO VISUAL
-========================= */
+/* HERO VISUAL */
 
 .hero-visual {
-    width: 40%;
-    min-height: 470px;
-
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-
-    position: relative;
+    min-height: 410px;
 }
 
 .glow {
-    width: 300px;
-    height: 300px;
-
     position: absolute;
-
-    background: #8b5cf6;
-
-    filter: blur(100px);
-    opacity: 0.15;
+    width: 320px;
+    height: 320px;
+    background: rgba(167, 139, 250, 0.28);
+    border-radius: 50%;
+    filter: blur(55px);
 }
 
 .career-card {
-    width: 350px;
-
-    padding: 28px;
-
-    background: rgba(255,255,255,0.9);
-
-    border: 1px solid #e2e8f0;
-
-    border-radius: 20px;
-
-    box-shadow:
-        0 30px 70px rgba(15, 23, 42, 0.12);
-
     position: relative;
     z-index: 2;
-
-    animation: float 4s ease-in-out infinite;
+    width: min(100%, 370px);
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.96);
+    border: 1px solid #ebe5ff;
+    border-radius: 20px;
+    box-shadow: 0 25px 65px rgba(66, 45, 130, 0.15);
 }
 
-.card-top {
+.card-top,
+.progress-label {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+    gap: 10px;
 }
 
 .profile-icon {
-    width: 48px;
-    height: 48px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
-    border-radius: 12px;
-
-    background: #ede9fe;
-
-    font-size: 22px;
-}
-
-.match {
-    padding: 6px 10px;
-
-    border-radius: 20px;
-
-    color: #15803d;
-    background: #dcfce7;
-
-    font-size: 12px;
-    font-weight: 600;
+    width: 46px;
+    height: 46px;
+    background: var(--lavender);
+    border-radius: 13px;
+    font-size: 23px;
 }
 
 .career-card h3 {
-    margin-top: 25px;
-    font-size: 22px;
+    margin-top: 20px;
+    color: var(--text);
+    font-size: 21px;
 }
 
 .career-card p {
     margin-top: 8px;
-
-    color: #64748b;
     font-size: 13px;
+    line-height: 1.7;
 }
 
-.skill-list {
+.skill-list,
+.career-skills {
     display: flex;
-    gap: 7px;
-
-    margin-top: 20px;
-
     flex-wrap: wrap;
+    gap: 7px;
+    margin-top: 17px;
 }
 
-.skill-list span {
-    padding: 6px 10px;
-
-    background: #f1f5f9;
-    border-radius: 6px;
-
-    font-size: 11px;
+.skill-list span,
+.career-skills span {
+    padding: 6px 9px;
+    color: #514466;
+    background: #f4f1fc;
+    border-radius: 7px;
+    font-size: 10px;
+    font-weight: 600;
 }
 
 .progress-area {
-    margin-top: 22px;
+    margin-top: 23px;
 }
 
 .progress-label {
-    display: flex;
-    justify-content: space-between;
-
-    font-size: 12px;
-    font-weight: 600;
+    color: var(--muted);
+    font-size: 11px;
 }
 
 .progress-bar {
     height: 7px;
-
-    margin-top: 8px;
-
-    border-radius: 10px;
-
-    background: #e2e8f0;
-
+    margin-top: 9px;
     overflow: hidden;
+    background: #eee9fb;
+    border-radius: 20px;
 }
 
 .progress-bar div {
-    width: 92%;
+    width: 25%;
     height: 100%;
-
-    border-radius: 10px;
-
-    background: linear-gradient(
-        90deg,
-        #4f46e5,
-        #9333ea
-    );
+    background: linear-gradient(90deg, var(--primary), #a78bfa);
+    border-radius: inherit;
 }
 
-.career-card button {
-    width: 100%;
-
-    margin-top: 24px;
-
-    padding: 12px;
-
-    border: none;
-    border-radius: 8px;
-
-    background: #0f172a;
-    color: white;
-
-    cursor: pointer;
-
-    transition: 0.3s;
+.career-card-btn {
+    display: block;
+    margin-top: 22px;
+    padding: 11px;
+    text-align: center;
+    color: var(--white);
+    background: var(--primary);
+    border-radius: 9px;
+    font-size: 12px;
+    font-weight: 700;
 }
 
-.career-card button:hover {
-    background: #4f46e5;
+.career-card-btn:hover {
+    background: var(--primary-dark);
 }
 
 .floating-card {
     position: absolute;
-
+    z-index: 3;
     display: flex;
     align-items: center;
     gap: 10px;
-
-    padding: 13px 16px;
-
-    background: white;
-
-    border: 1px solid #e2e8f0;
-
-    border-radius: 12px;
-
-    box-shadow: 0 15px 35px rgba(15,23,42,0.1);
-
-    z-index: 3;
+    padding: 13px 15px;
+    background: var(--white);
+    border: 1px solid #eee8ff;
+    border-radius: 13px;
+    box-shadow: var(--shadow);
+    animation: float-card 5s ease-in-out infinite;
 }
 
-.floating-card span {
+.floating-card > span {
     font-size: 22px;
 }
 
-.floating-card strong,
-.floating-card small {
-    display: block;
+.floating-card div {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
 }
 
 .floating-card strong {
+    color: var(--text);
     font-size: 12px;
 }
 
 .floating-card small {
-    color: #64748b;
+    color: var(--muted);
     font-size: 10px;
 }
 
 .card-one {
-    top: 70px;
-    left: 0;
-
-    animation: floatSmall 3s ease-in-out infinite;
+    top: 30px;
+    left: -12px;
 }
 
 .card-two {
-    right: -20px;
-    bottom: 70px;
-
-    animation: floatSmall 3.5s ease-in-out infinite;
+    right: -5px;
+    bottom: 30px;
+    animation-delay: -2.5s;
 }
 
-
-/* =========================
-   ANIMATIONS
-========================= */
-
-@keyframes float {
-
-    0%, 100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-12px);
-    }
+@keyframes float-card {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
 }
 
-@keyframes floatSmall {
+/* =========================================
+   HOMEPAGE GUIDANCE SECTIONS
+========================================= */
 
-    0%, 100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-8px);
-    }
+.guidance-section,
+.tools-section {
+    padding: 85px 8%;
 }
 
-
-/* =========================
-   SECTION COMMON
-========================= */
-
-.how-section,
-.categories-section {
-    padding: 100px 8%;
-    background: white;
+.guidance-section:nth-of-type(even),
+.tools-section {
+    background: var(--lavender-light);
 }
 
-.section-heading {
-    text-align: center;
-    max-width: 650px;
-
-    margin: 0 auto 55px;
-}
-
-.section-heading span,
-.cta span {
-    color: #4f46e5;
-
-    font-size: 12px;
-    font-weight: 700;
-
-    letter-spacing: 2px;
-}
-
-.section-heading h2 {
-    margin-top: 10px;
-
-    font-size: 38px;
-    letter-spacing: -1px;
-}
-
-.section-heading p {
-    margin-top: 12px;
-
-    color: #64748b;
-}
-
-
-/* =========================
-   HOW IT WORKS
-========================= */
-
-.steps {
+.guidance-grid {
     display: grid;
-
-    grid-template-columns: repeat(4, 1fr);
-
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 20px;
-
-    max-width: 1200px;
-
-    margin: auto;
 }
 
-.step-card {
-    padding: 28px;
-
-    border: 1px solid #e2e8f0;
-    border-radius: 15px;
-
-    position: relative;
-
-    transition: 0.3s;
+.guidance-card {
+    padding: 25px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    transition: transform 0.22s ease, box-shadow 0.22s ease,
+                border-color 0.22s ease;
 }
 
-.step-card:hover {
-    transform: translateY(-7px);
-
-    border-color: #c4b5fd;
-
-    box-shadow: 0 20px 40px rgba(15,23,42,0.08);
+.guidance-card:hover,
+.tool-card:hover {
+    transform: translateY(-5px);
+    border-color: #d7c8ff;
+    box-shadow: var(--shadow);
 }
 
-.step-number {
-    position: absolute;
-    right: 20px;
-    top: 18px;
-
-    color: #cbd5e1;
-
-    font-size: 12px;
-    font-weight: 700;
-}
-
-.step-icon {
-    width: 50px;
-    height: 50px;
-
+.guidance-icon,
+.ready-icon {
     display: flex;
     align-items: center;
     justify-content: center;
-
-    border-radius: 12px;
-
-    background: #ede9fe;
-
-    font-size: 21px;
+    width: 48px;
+    height: 48px;
+    margin-bottom: 20px;
+    color: var(--primary);
+    background: var(--lavender);
+    border-radius: 13px;
+    font-size: 17px;
+    font-weight: 800;
 }
 
-.step-card h3 {
-    margin-top: 20px;
-
+.guidance-card h3,
+.skill-point h3 {
+    color: var(--text);
     font-size: 17px;
 }
 
-.step-card p {
-    margin-top: 8px;
-
-    color: #64748b;
-
+.guidance-card p,
+.skill-point p {
+    margin-top: 9px;
     font-size: 13px;
+    line-height: 1.75;
 }
 
+/* SKILLS */
 
-/* =========================
-   CATEGORIES
-========================= */
-
-.categories-section {
-    background: #f8fafc;
+.skills-guidance {
+    background: #fff;
 }
 
-.categories {
-    max-width: 1200px;
-
-    margin: auto;
-
+.skills-guidance-layout {
     display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 35px;
+    align-items: stretch;
+}
 
-    grid-template-columns: repeat(3, 1fr);
+.skills-feature {
+    padding: 38px;
+    background: linear-gradient(140deg, #312e81, #6d28d9);
+    border-radius: 20px;
+    color: var(--white);
+}
 
+.feature-label {
+    color: #ddd6fe;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.skills-feature h3 {
+    margin-top: 20px;
+    color: var(--white);
+    font-size: clamp(25px, 3vw, 34px);
+    line-height: 1.25;
+}
+
+.skills-feature p {
+    margin-top: 17px;
+    color: #e9e5ff;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.text-link {
+    display: inline-block;
+    margin-top: 24px;
+    color: var(--white);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.text-link:hover {
+    text-decoration: underline;
+}
+
+.skill-points {
+    display: grid;
+    gap: 14px;
+}
+
+.skill-point {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 18px;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 13px;
+}
+
+.skill-point-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 42px;
+    height: 42px;
+    color: var(--primary);
+    background: var(--lavender);
+    border-radius: 11px;
+    font-size: 20px;
+}
+
+/* JOB READINESS */
+
+.job-ready-section {
+    background: #f8f7ff;
+}
+
+.job-ready-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+/* TOOLS */
+
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 20px;
 }
 
-.category-card {
-    padding: 28px;
-
-    background: white;
-
-    border: 1px solid #e2e8f0;
-
-    border-radius: 15px;
-
-    transition: 0.3s;
+.tool-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 17px;
+    padding: 25px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    transition: transform 0.22s ease, box-shadow 0.22s ease,
+                border-color 0.22s ease;
 }
 
-.category-card:hover {
-    transform: translateY(-6px);
-
-    border-color: #a78bfa;
-
-    box-shadow: 0 20px 40px rgba(15,23,42,0.08);
+.tool-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 48px;
+    height: 48px;
+    background: var(--lavender);
+    border-radius: 13px;
+    font-size: 23px;
 }
 
-.category-icon {
-    font-size: 27px;
+.tool-card h3 {
+    color: var(--text);
+    font-size: 17px;
 }
 
-.category-card h3 {
-    margin-top: 18px;
-}
-
-.category-card p {
-    color: #64748b;
-
+.tool-card p {
+    margin-top: 8px;
     font-size: 13px;
-
-    margin-top: 4px;
+    line-height: 1.7;
 }
 
-.category-card span {
+.tool-card strong {
     display: inline-block;
-
-    margin-top: 20px;
-
-    color: #4f46e5;
-
-    font-size: 13px;
-    font-weight: 600;
+    margin-top: 16px;
+    color: var(--primary);
+    font-size: 12px;
 }
 
+.prototype-note {
+    max-width: 760px;
+    margin: 30px auto 0;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.8;
+}
 
-/* =========================
-   CTA
-========================= */
+/* ABOUT */
+
+.about-section {
+    padding: 90px 8%;
+    background: #fff;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+}
+
+.about-eyebrow {
+    color: var(--primary);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.about-content h2 {
+    margin-top: 14px;
+    font-size: clamp(28px, 4vw, 42px);
+    line-height: 1.2;
+    letter-spacing: -1px;
+}
+
+.about-content p {
+    max-width: 700px;
+    margin: 18px auto 0;
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+/* FINAL CTA */
 
 .cta {
-    margin: 80px 8%;
-
-    padding: 70px 30px;
-
+    margin: 30px 8% 80px;
+    padding: 65px 25px;
     text-align: center;
-
-    border-radius: 25px;
-
-    color: white;
-
-    background:
-        radial-gradient(
-            circle at 20% 20%,
-            rgba(255,255,255,0.15),
-            transparent 30%
-        ),
-        linear-gradient(
-            135deg,
-            #312e81,
-            #6d28d9
-        );
+    color: var(--white);
+    background: linear-gradient(135deg, #312e81, #6d28d9);
+    border-radius: 24px;
 }
 
-.cta span {
+.cta > div > span,
+.career-cta > span {
     color: #ddd6fe;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
 }
 
 .cta h2 {
-    margin-top: 10px;
-
-    font-size: 40px;
+    margin-top: 12px;
+    color: var(--white);
+    font-size: clamp(27px, 4vw, 38px);
 }
 
 .cta p {
-    margin: 12px auto 25px;
-
-    max-width: 500px;
-
-    color: #ddd6fe;
+    max-width: 570px;
+    margin: 13px auto 25px;
+    color: #e5e1ff;
+    font-size: 14px;
 }
 
 .cta .primary-btn {
-    background: white;
-    color: #4f46e5;
-
+    color: var(--primary);
+    background: var(--white);
     box-shadow: none;
 }
 
+.cta .primary-btn:hover {
+    background: #f4f0ff;
+}
 
-/* =========================
-   FOOTER
-========================= */
+/* PROFILE FORM */
 
-footer {
+.profile-section {
+    padding: 80px 20px;
+    background: var(--lavender-light);
+    scroll-margin-top: 90px;
+}
+
+.profile-card {
+    width: min(100%, 650px);
+    margin: auto;
+    padding: 35px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+}
+
+.profile-tag {
+    color: var(--primary);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.profile-card h2 {
+    margin-top: 10px;
+    color: var(--text);
+    font-size: 30px;
+}
+
+.profile-card > p {
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+.profile-form {
     display: grid;
-
-    grid-template-columns: 2fr 1fr 1fr 1fr;
-
-    gap: 40px;
-
-    padding: 70px 8%;
-
-    background: #0f172a;
-
-    color: white;
+    gap: 10px;
+    margin-top: 25px;
 }
 
-.footer-brand p {
-    margin-top: 15px;
-
-    color: #94a3b8;
-
+.profile-form label {
+    margin-top: 6px;
+    color: #433b59;
     font-size: 13px;
+    font-weight: 700;
 }
 
-.footer-column {
-    display: flex;
-    flex-direction: column;
+.profile-form input,
+.profile-form textarea,
+.profile-form select {
+    width: 100%;
+    padding: 12px 13px;
+    color: var(--text);
+    background: #fff;
+    border: 1px solid #ded8eb;
+    border-radius: 9px;
+    outline: none;
+}
 
+.profile-form input:focus,
+.profile-form textarea:focus,
+.profile-form select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+.profile-form textarea {
+    resize: vertical;
+}
+
+.profile-form button {
+    margin-top: 12px;
+    padding: 13px 18px;
+    color: var(--white);
+    background: var(--primary);
+    border: 0;
+    border-radius: 9px;
+    font-weight: 700;
+}
+
+.profile-form button:hover {
+    background: var(--primary-dark);
+}
+
+/* =========================================
+   CAREER PATHS PAGE
+========================================= */
+
+.career-hero {
+    padding: 85px 8% 55px;
+    text-align: center;
+    background:
+        radial-gradient(ellipse at 50% 0%, rgba(124, 58, 237, 0.18), transparent 48%),
+        #faf9ff;
+}
+
+.career-hero h1 {
+    margin-top: 20px;
+    color: var(--text);
+    font-size: clamp(38px, 5.5vw, 60px);
+    line-height: 1.1;
+    letter-spacing: -2px;
+}
+
+.career-hero h1 span {
+    display: block;
+    color: var(--primary);
+}
+
+.career-hero p {
+    max-width: 650px;
+    margin: 20px auto 0;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.career-search-section {
+    padding: 0 8% 65px;
+    background: #faf9ff;
+}
+
+.career-search {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    max-width: 850px;
+    margin: auto;
+    padding: 8px 8px 8px 18px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 13px;
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.06);
+}
+
+.career-search > span {
+    color: var(--primary);
+    font-size: 23px;
+}
+
+.career-search input {
+    flex: 1;
+    min-width: 0;
+    padding: 12px;
+    border: 0;
+    outline: 0;
+    font-size: 14px;
+}
+
+.career-search button {
+    padding: 12px 22px;
+    color: var(--white);
+    background: var(--primary);
+    border: 0;
+    border-radius: 9px;
+    font-weight: 700;
+}
+
+.career-search button:hover {
+    background: var(--primary-dark);
+}
+
+.search-note {
+    margin-top: 12px;
+    text-align: center;
+    font-size: 12px;
+}
+
+.careers-section {
+    padding: 75px 8%;
+    background: var(--white);
+}
+
+.careers-section > h2 {
+    margin-top: 9px;
+}
+
+.section-intro {
+    margin: 12px 0 0;
+}
+
+.career-filter-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 30px 0;
+}
+
+.career-filter {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 9px 17px;
+    color: var(--muted);
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    font-size: 13px;
+    font-weight: 600;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.career-filter:hover,
+.career-filter.active {
+    color: var(--white);
+    background: var(--primary);
+    border-color: var(--primary);
+}
+
+.career-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.career-grid .career-card {
+    width: 100%;
+    padding: 25px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 17px;
+    box-shadow: 0 4px 14px rgba(30, 20, 70, 0.025);
+    transition: transform 0.22s ease, border-color 0.22s ease,
+                box-shadow 0.22s ease;
+}
+
+.career-grid .career-card:hover {
+    transform: translateY(-5px);
+    border-color: #c4b5fd;
+    box-shadow: 0 17px 35px rgba(50, 35, 100, 0.09);
+}
+
+.career-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     gap: 10px;
 }
 
-.footer-column h4 {
-    margin-bottom: 10px;
+.career-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 13px;
+    font-size: 17px;
+    font-weight: 800;
 }
 
-.footer-column a {
-    color: #94a3b8;
+.purple-icon {
+    color: #4f46e5;
+    background: #eef2ff;
+}
 
+.blue-icon {
+    color: #0891b2;
+    background: #cffafe;
+}
+
+.pink-icon {
+    color: #db2777;
+    background: #fce7f3;
+}
+
+.orange-icon {
+    color: #ea580c;
+    background: #ffedd5;
+}
+
+.green-icon {
+    color: #15803d;
+    background: #dcfce7;
+}
+
+.violet-icon {
+    color: #9333ea;
+    background: #f3e8ff;
+}
+
+.demand-label {
+    padding: 6px 10px;
+    color: #15803d;
+    background: #dcfce7;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.career-grid .career-card h3 {
+    margin-top: 20px;
+    color: var(--text);
+    font-size: 20px;
+}
+
+.career-grid .career-card > p {
+    min-height: 66px;
+    margin-top: 8px;
     font-size: 13px;
-
-    transition: 0.3s;
+    line-height: 1.7;
 }
 
-.footer-column a:hover {
-    color: white;
+.career-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 22px;
+    padding-top: 17px;
+    border-top: 1px solid var(--border);
 }
 
+.career-info small {
+    display: block;
+    color: #94a3b8;
+    font-size: 10px;
+}
 
-/* =========================
-   RESPONSIVE
-========================= */
+.career-info strong {
+    display: block;
+    margin-top: 4px;
+    color: var(--text);
+    font-size: 13px;
+}
 
-@media (max-width: 900px) {
+.career-view-button {
+    display: block;
+    margin-top: 22px;
+    padding: 11px;
+    color: var(--primary);
+    background: #eef2ff;
+    border-radius: 9px;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 700;
+    transition: color 0.2s ease, background 0.2s ease;
+}
 
-    .navbar nav {
-        display: none;
+.career-view-button:hover {
+    color: var(--white);
+    background: var(--primary);
+}
+
+.career-disclaimer {
+    margin-top: 25px;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.career-cta {
+    margin: 15px 8% 75px;
+    padding: 60px 25px;
+    color: var(--white);
+    background: linear-gradient(135deg, #312e81, #6d28d9);
+    border-radius: 23px;
+    text-align: center;
+}
+
+.career-cta h2 {
+    margin-top: 12px;
+    color: var(--white);
+    font-size: clamp(27px, 4vw, 38px);
+}
+
+.career-cta p {
+    margin: 12px auto 25px;
+    color: #e5e1ff;
+    font-size: 14px;
+}
+
+.career-cta a {
+    display: inline-flex;
+    padding: 12px 21px;
+    color: var(--primary);
+    background: var(--white);
+    border-radius: 9px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.career-cta a:hover {
+    background: #f4f0ff;
+}
+
+/* =========================================
+   SHARED FOOTER
+========================================= */
+
+footer,
+.site-footer {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 35px;
+    padding: 55px 8%;
+    background: #faf9ff;
+    border-top: 1px solid var(--border);
+}
+
+.footer-brand p,
+footer > div > p {
+    margin-top: 13px;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.footer-column,
+footer > div:not(:first-child) {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.footer-column h4,
+footer h4 {
+    margin-bottom: 5px;
+    color: var(--text);
+    font-size: 14px;
+}
+
+.footer-column a,
+footer > div:not(:first-child) a {
+    color: var(--muted);
+    font-size: 12px;
+    transition: color 0.2s ease;
+}
+
+.footer-column a:hover,
+footer > div:not(:first-child) a:hover {
+    color: var(--primary);
+}
+
+/* =========================================
+   RESPONSIVE NAVIGATION
+========================================= */
+
+@media (max-width: 1150px) {
+    .navbar {
+        flex-wrap: wrap;
+        gap: 12px 20px;
+    }
+
+    .navbar > .main-nav {
+        order: 3;
+        flex: 1 0 100%;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px 22px;
+    }
+
+    .nav-actions {
+        margin-left: auto;
     }
 
     .hero {
-        flex-direction: column;
+        gap: 35px;
+        padding-left: 6%;
+        padding-right: 6%;
+    }
+}
 
-        text-align: center;
-
-        gap: 50px;
+@media (max-width: 900px) {
+    .hero {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 65px 7%;
     }
 
     .hero-content {
-        width: 100%;
+        max-width: 720px;
+        margin: auto;
+        text-align: center;
     }
 
     .hero-content > p {
@@ -830,1021 +1388,104 @@ footer {
     }
 
     .hero-visual {
-        width: 100%;
+        width: min(100%, 520px);
+        margin: auto;
     }
 
-    .steps {
-        grid-template-columns: repeat(2, 1fr);
+    .guidance-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    .categories {
-        grid-template-columns: repeat(2, 1fr);
+    .skills-guidance-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .tools-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .career-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    footer,
+    .site-footer {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
 
-
 @media (max-width: 600px) {
-
     .navbar {
-        padding: 0 5%;
+        padding: 12px 4%;
+        gap: 12px;
     }
 
+    .navbar > .logo {
+        font-size: 22px;
+    }
+
+    .nav-actions {
+        gap: 7px;
+    }
+
+    .account-button {
+        min-height: 38px;
+        padding: 8px 10px;
+        font-size: 12px;
+    }
+
+    .signup-btn,
     .login-btn {
-        display: none;
+        min-height: 38px;
+        padding: 8px 10px;
+        font-size: 12px;
+    }
+
+    .navbar > .main-nav {
+        gap: 7px 15px;
+    }
+
+    .main-nav a {
+        font-size: 12px;
     }
 
     .hero {
-        padding: 60px 5%;
+        padding: 50px 5% 60px;
     }
 
     .hero h1 {
-        font-size: 45px;
-        letter-spacing: -2px;
+        font-size: 43px;
+        letter-spacing: -1.8px;
     }
 
-    .hero-buttons {
-        flex-direction: column;
+    .hero-content > p {
+        font-size: 14px;
     }
 
     .hero-stats {
-        gap: 20px;
+        gap: 18px;
     }
 
     .hero-visual {
-        min-height: 400px;
+        min-height: 390px;
     }
 
     .career-card {
-        width: 90%;
+        padding: 20px;
     }
 
     .card-one {
         left: 0;
-        top: 30px;
+        top: 10px;
     }
 
     .card-two {
         right: 0;
-        bottom: 30px;
-    }
-
-    .how-section,
-    .categories-section {
-        padding: 70px 5%;
-    }
-
-    .section-heading h2 {
-        font-size: 30px;
-    }
-
-    .steps,
-    .categories {
-        grid-template-columns: 1fr;
-    }
-
-    .cta {
-        margin: 50px 5%;
-        padding: 50px 20px;
-    }
-
-    .cta h2 {
-        font-size: 30px;
-    }
-
-    footer {
-        grid-template-columns: 1fr 1fr;
-        padding: 50px 5%;
-    }
-}
-/* =========================================================
-   CAREERLY - NEW FUNCTIONAL SECTIONS
-   Paste this at the VERY BOTTOM of style.css
-   ========================================================= */
-
-
-/* ================= GENERAL ================= */
-
-html {
-    scroll-behavior: smooth;
-}
-
-section[id] {
-    scroll-margin-top: 90px;
-}
-
-
-/* ================= CAREER CARD BUTTON ================= */
-
-.career-card-btn {
-    display: block;
-    width: 100%;
-    text-align: center;
-    text-decoration: none;
-
-    margin-top: 20px;
-    padding: 12px 18px;
-
-    background: linear-gradient(
-        135deg,
-        #4f46e5,
-        #7c3aed
-    );
-
-    color: white;
-    border-radius: 10px;
-
-    font-weight: 600;
-
-    transition: 0.3s ease;
-}
-
-.career-card-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(79, 70, 229, 0.25);
-}
-
-
-/* ================= STEP CARDS ================= */
-
-.step-card {
-    text-decoration: none;
-    color: inherit;
-    cursor: pointer;
-}
-
-.step-card:hover {
-    transform: translateY(-8px);
-}
-
-
-/* ================= CATEGORY CARDS ================= */
-
-.category-card {
-    text-decoration: none;
-    color: inherit;
-    cursor: pointer;
-}
-
-.category-card:hover {
-    transform: translateY(-8px);
-}
-
-
-/* ================= COMMON UTILITY SECTIONS ================= */
-
-.utility-section,
-.assessment-section,
-.resources-section,
-.get-started-section,
-.login-section,
-.about-section,
-.policy-section {
-
-    padding: 100px 8%;
-
-    background: #f8fafc;
-}
-
-
-/* ================= SECTION HEADING ================= */
-
-.utility-section .section-heading,
-.assessment-section .section-heading,
-.resources-section .section-heading,
-.get-started-section .section-heading,
-.login-section .section-heading,
-.about-section .section-heading,
-.policy-section .section-heading {
-
-    text-align: center;
-    max-width: 750px;
-    margin: 0 auto 50px;
-}
-
-.utility-section .section-heading span,
-.assessment-section .section-heading span,
-.resources-section .section-heading span,
-.get-started-section .section-heading span,
-.login-section .section-heading span,
-.about-section .section-heading span,
-.policy-section .section-heading span {
-
-    color: #4f46e5;
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-}
-
-.utility-section .section-heading h2,
-.assessment-section .section-heading h2,
-.resources-section .section-heading h2,
-.get-started-section .section-heading h2,
-.login-section .section-heading h2,
-.about-section .section-heading h2,
-.policy-section .section-heading h2 {
-
-    font-size: 38px;
-    color: #0f172a;
-    margin: 12px 0;
-}
-
-.utility-section .section-heading p,
-.assessment-section .section-heading p,
-.resources-section .section-heading p,
-.get-started-section .section-heading p,
-.login-section .section-heading p,
-.about-section .section-heading p,
-.policy-section .section-heading p {
-
-    color: #64748b;
-    line-height: 1.7;
-}
-
-
-/* ================= UTILITY CARDS ================= */
-
-.utility-grid {
-
-    max-width: 1100px;
-    margin: auto;
-
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-
-    gap: 25px;
-}
-
-
-.utility-card {
-
-    display: block;
-
-    background: white;
-
-    padding: 30px;
-
-    border-radius: 18px;
-
-    border: 1px solid #e2e8f0;
-
-    text-decoration: none;
-    color: inherit;
-
-    box-shadow: 0 8px 25px rgba(15, 23, 42, 0.05);
-
-    transition: 0.3s ease;
-}
-
-
-.utility-card:hover {
-
-    transform: translateY(-8px);
-
-    box-shadow:
-        0 18px 40px rgba(15, 23, 42, 0.10);
-
-}
-
-
-.utility-card > span {
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    width: 55px;
-    height: 55px;
-
-    background: #eef2ff;
-
-    border-radius: 14px;
-
-    font-size: 25px;
-
-    margin-bottom: 20px;
-}
-
-
-.utility-card h3 {
-
-    color: #0f172a;
-
-    margin-bottom: 10px;
-
-    font-size: 20px;
-}
-
-
-.utility-card p {
-
-    color: #64748b;
-
-    line-height: 1.6;
-
-    margin-bottom: 20px;
-}
-
-
-.utility-card strong {
-
-    color: #4f46e5;
-
-    font-size: 14px;
-}
-
-
-/* ================= ASSESSMENT ================= */
-
-.assessment-section {
-
-    background: white;
-}
-
-
-.assessment-box {
-
-    max-width: 800px;
-
-    margin: auto;
-
-    background: #f8fafc;
-
-    border: 1px solid #e2e8f0;
-
-    border-radius: 20px;
-
-    padding: 40px;
-
-    box-shadow:
-        0 15px 40px rgba(15, 23, 42, 0.06);
-}
-
-
-.assessment-box h3 {
-
-    text-align: center;
-
-    color: #0f172a;
-
-    margin-bottom: 25px;
-
-    font-size: 22px;
-}
-
-
-/* Hide radio buttons */
-
-.assessment-box input {
-
-    display: none;
-}
-
-
-/* Assessment choices */
-
-.assessment-options {
-
-    display: grid;
-
-    grid-template-columns: repeat(2, 1fr);
-
-    gap: 15px;
-}
-
-
-.assessment-options label {
-
-    background: white;
-
-    border: 2px solid #e2e8f0;
-
-    border-radius: 12px;
-
-    padding: 18px;
-
-    cursor: pointer;
-
-    color: #334155;
-
-    font-weight: 600;
-
-    transition: 0.3s ease;
-}
-
-
-.assessment-options label:hover {
-
-    border-color: #4f46e5;
-
-    transform: translateY(-2px);
-}
-
-
-/* Selected assessment option */
-
-#interest-tech:checked ~ .assessment-options label[for="interest-tech"],
-#interest-data:checked ~ .assessment-options label[for="interest-data"],
-#interest-design:checked ~ .assessment-options label[for="interest-design"],
-#interest-business:checked ~ .assessment-options label[for="interest-business"] {
-
-    background: #4f46e5;
-
-    color: white;
-
-    border-color: #4f46e5;
-}
-
-
-/* ================= ASSESSMENT RESULTS ================= */
-
-.assessment-result {
-
-    display: none;
-
-    margin-top: 25px;
-
-    padding: 25px;
-
-    background: white;
-
-    border-radius: 14px;
-
-    border-left: 4px solid #4f46e5;
-}
-
-
-.assessment-result strong {
-
-    color: #0f172a;
-
-    font-size: 18px;
-}
-
-
-.assessment-result p {
-
-    color: #64748b;
-
-    line-height: 1.6;
-
-    margin: 8px 0 15px;
-}
-
-
-.assessment-result a {
-
-    display: inline-block;
-
-    color: #4f46e5;
-
-    font-weight: 700;
-
-    text-decoration: none;
-}
-
-
-/* Show correct result */
-
-#interest-tech:checked ~ .result-tech {
-    display: block;
-}
-
-#interest-data:checked ~ .result-data {
-    display: block;
-}
-
-#interest-design:checked ~ .result-design {
-    display: block;
-}
-
-#interest-business:checked ~ .result-business {
-    display: block;
-}
-
-
-/* ================= FORMS ================= */
-
-.profile-form {
-
-    max-width: 650px;
-
-    margin: auto;
-
-    background: white;
-
-    padding: 35px;
-
-    border-radius: 20px;
-
-    border: 1px solid #e2e8f0;
-
-    box-shadow:
-        0 15px 40px rgba(15, 23, 42, 0.06);
-
-    display: grid;
-
-    gap: 16px;
-}
-
-
-.profile-form input,
-.profile-form select {
-
-    width: 100%;
-
-    padding: 14px 16px;
-
-    border: 1px solid #cbd5e1;
-
-    border-radius: 10px;
-
-    font-size: 15px;
-
-    outline: none;
-
-    background: white;
-
-    color: #0f172a;
-
-    transition: 0.2s ease;
-
-    box-sizing: border-box;
-}
-
-
-.profile-form input:focus,
-.profile-form select:focus {
-
-    border-color: #4f46e5;
-
-    box-shadow:
-        0 0 0 3px rgba(79, 70, 229, 0.10);
-}
-
-
-.profile-form button {
-
-    border: none;
-
-    padding: 14px 20px;
-
-    border-radius: 10px;
-
-    background: linear-gradient(
-        135deg,
-        #4f46e5,
-        #7c3aed
-    );
-
-    color: white;
-
-    font-size: 15px;
-
-    font-weight: 700;
-
-    cursor: pointer;
-
-    transition: 0.3s ease;
-}
-
-
-.profile-form button:hover {
-
-    transform: translateY(-2px);
-
-    box-shadow:
-        0 10px 25px rgba(79, 70, 229, 0.25);
-}
-
-
-/* ================= FORM SUCCESS ================= */
-
-.form-success {
-
-    display: none;
-
-    max-width: 650px;
-
-    margin: 25px auto 0;
-
-    padding: 25px;
-
-    background: #f0fdf4;
-
-    border: 1px solid #bbf7d0;
-
-    border-radius: 15px;
-
-    text-align: center;
-}
-
-
-.form-success strong {
-
-    display: block;
-
-    color: #166534;
-
-    font-size: 18px;
-
-    margin-bottom: 8px;
-}
-
-
-.form-success p {
-
-    color: #475569;
-
-    margin-bottom: 15px;
-}
-
-
-.form-success a {
-
-    color: #4f46e5;
-
-    font-weight: 700;
-
-    text-decoration: none;
-}
-
-
-/* Show success message after form submission */
-
-#profile-created:target {
-
-    display: block;
-}
-
-
-#logged-in:target {
-
-    display: block;
-}
-
-
-/* ================= LOGIN ================= */
-
-.login-section {
-
-    background: #f8fafc;
-}
-
-
-.login-form {
-
-    max-width: 450px;
-}
-
-
-/* ================= ABOUT ================= */
-
-.about-section {
-
-    background: white;
-
-    min-height: 350px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-}
-
-
-/* ================= POLICY ================= */
-
-.policy-section {
-
-    padding-top: 70px;
-
-    padding-bottom: 70px;
-
-    background: #f8fafc;
-}
-
-
-/* ================= FOCUS ACCESSIBILITY ================= */
-
-a:focus-visible,
-button:focus-visible,
-input:focus-visible,
-select:focus-visible,
-label:focus-visible {
-
-    outline: 3px solid rgba(79, 70, 229, 0.35);
-
-    outline-offset: 3px;
-}
-
-
-/* ================= RESPONSIVE ================= */
-
-@media (max-width: 900px) {
-
-    .utility-grid {
-
-        grid-template-columns: repeat(2, 1fr);
-
-    }
-
-    .assessment-options {
-
-        grid-template-columns: 1fr;
-
-    }
-
-    .utility-section,
-    .assessment-section,
-    .resources-section,
-    .get-started-section,
-    .login-section,
-    .about-section,
-    .policy-section {
-
-        padding-left: 5%;
-        padding-right: 5%;
-
-    }
-
-}
-
-
-@media (max-width: 600px) {
-
-    .utility-grid {
-
-        grid-template-columns: 1fr;
-
-    }
-
-    .utility-section .section-heading h2,
-    .assessment-section .section-heading h2,
-    .resources-section .section-heading h2,
-    .get-started-section .section-heading h2,
-    .login-section .section-heading h2,
-    .about-section .section-heading h2,
-    .policy-section .section-heading h2 {
-
-        font-size: 30px;
-
-    }
-
-    .assessment-box {
-
-        padding: 25px 18px;
-
-    }
-
-    .profile-form {
-
-        padding: 25px 18px;
-
-    }
-
-}
-/* =========================================================
-   CAREERLY - FINAL UI POLISH
-   Small improvements only - existing design preserved
-   ========================================================= */
-
-
-/* =========================
-   SMOOTH INTERACTION
-========================= */
-
-.navbar nav a,
-.login-btn,
-.signup-btn,
-.primary-btn,
-.secondary-btn,
-.step-card,
-.category-card,
-.utility-card,
-.career-card-btn {
-    transition:
-        color 0.25s ease,
-        background-color 0.25s ease,
-        border-color 0.25s ease,
-        box-shadow 0.25s ease,
-        transform 0.25s ease;
-}
-
-
-/* =========================
-   LOGIN HOVER
-========================= */
-
-.login-btn {
-    transition: 0.25s ease;
-}
-
-.login-btn:hover {
-    color: #4f46e5;
-}
-
-
-/* =========================
-   NAVBAR ACTIVE / HOVER
-========================= */
-
-.navbar nav a {
-    position: relative;
-}
-
-.navbar nav a::after {
-    content: "";
-
-    position: absolute;
-
-    left: 0;
-    bottom: -7px;
-
-    width: 0;
-    height: 2px;
-
-    border-radius: 10px;
-
-    background: #4f46e5;
-
-    transition: width 0.25s ease;
-}
-
-.navbar nav a:hover::after,
-.navbar nav a.active::after {
-    width: 100%;
-}
-
-
-/* =========================
-   CAREER CARD BUTTON
-========================= */
-
-.career-card-btn {
-    position: relative;
-    overflow: hidden;
-}
-
-.career-card-btn::before {
-    content: "";
-
-    position: absolute;
-
-    top: 0;
-    left: -100%;
-
-    width: 100%;
-    height: 100%;
-
-    background: rgba(255, 255, 255, 0.12);
-
-    transition: left 0.35s ease;
-}
-
-.career-card-btn:hover::before {
-    left: 100%;
-}
-
-
-/* =========================
-   CARD HOVER POLISH
-========================= */
-
-.step-card:hover,
-.category-card:hover,
-.utility-card:hover {
-    box-shadow:
-        0 20px 45px rgba(15, 23, 42, 0.10);
-}
-
-
-/* =========================
-   HERO CARD HOVER
-========================= */
-
-.career-card:hover {
-    box-shadow:
-        0 35px 80px rgba(15, 23, 42, 0.15);
-}
-
-
-/* =========================
-   SECTION ENTRANCE
-========================= */
-
-.how-section,
-.categories-section,
-.utility-section,
-.assessment-section,
-.resources-section,
-.get-started-section,
-.login-section,
-.about-section,
-.policy-section {
-    animation: sectionFade 0.7s ease both;
-}
-
-@keyframes sectionFade {
-
-    from {
-        opacity: 0;
-        transform: translateY(15px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-}
-
-
-/* =========================
-   FORM INPUT POLISH
-========================= */
-
-.profile-form input:hover,
-.profile-form select:hover {
-    border-color: #a5b4fc;
-}
-
-
-/* =========================
-   ASSESSMENT OPTION POLISH
-========================= */
-
-.assessment-options label {
-    position: relative;
-    overflow: hidden;
-}
-
-.assessment-options label:active {
-    transform: scale(0.98);
-}
-
-
-/* =========================
-   CTA BUTTON POLISH
-========================= */
-
-.cta .primary-btn {
-    transition:
-        transform 0.25s ease,
-        box-shadow 0.25s ease;
-}
-
-.cta .primary-btn:hover {
-    transform: translateY(-3px);
-
-    box-shadow:
-        0 12px 30px rgba(15, 23, 42, 0.20);
-}
-
-
-/* =========================
-   FOOTER POLISH
-========================= */
-
-.footer-column a {
-    position: relative;
-    width: fit-content;
-}
-
-.footer-column a:hover {
-    transform: translateX(3px);
-}
-
-
-/* =========================
-   MOBILE POLISH
-========================= */
-
-@media (max-width: 600px) {
-
-    .hero-badge {
-        font-size: 12px;
-    }
-
-    .hero-content > p {
-        font-size: 15px;
-    }
-
-    .hero-stats {
-        flex-wrap: wrap;
-    }
-
-    .hero-stats div {
-        min-width: 85px;
+        bottom: 10px;
     }
 
     .floating-card {
-        padding: 10px 12px;
-    }
-
-    .floating-card span {
-        font-size: 18px;
+        padding: 10px;
     }
 
     .floating-card strong {
@@ -1855,29 +1496,863 @@ label:focus-visible {
         font-size: 9px;
     }
 
-    .career-card {
-        padding: 22px;
+    .guidance-section,
+    .tools-section,
+    .careers-section {
+        padding: 60px 5%;
     }
 
+    .section-heading {
+        margin-bottom: 30px;
+    }
+
+    .section-heading h2,
+    .careers-section > h2 {
+        font-size: 29px;
+    }
+
+    .guidance-grid,
+    .job-ready-grid,
+    .career-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .skills-feature {
+        padding: 27px;
+    }
+
+    .tool-card {
+        padding: 20px;
+    }
+
+    .about-section {
+        padding: 65px 6%;
+    }
+
+    .cta,
+    .career-cta {
+        margin: 10px 5% 55px;
+        padding: 45px 20px;
+    }
+
+    .profile-section {
+        padding: 55px 5%;
+    }
+
+    .profile-card {
+        padding: 24px 20px;
+    }
+
+    .career-hero {
+        padding: 60px 5% 40px;
+    }
+
+    .career-hero h1 {
+        font-size: 40px;
+        letter-spacing: -1.5px;
+    }
+
+    .career-search-section {
+        padding: 0 5% 45px;
+    }
+
+    .career-search {
+        gap: 5px;
+        padding-left: 10px;
+    }
+
+    .career-search input {
+        padding: 10px 5px;
+        font-size: 12px;
+    }
+
+    .career-search button {
+        padding: 11px 13px;
+        font-size: 12px;
+    }
+
+    .career-filter-list {
+        gap: 8px;
+    }
+
+    .career-filter {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+
+    footer,
+    .site-footer {
+        grid-template-columns: 1fr 1fr;
+        gap: 28px 18px;
+        padding: 40px 6%;
+    }
 }
 
-
-/* =========================
-   ACCESSIBILITY
-========================= */
-
+/* REDUCED MOTION ACCESSIBILITY */
 @media (prefers-reduced-motion: reduce) {
-
-    html {
-        scroll-behavior: auto;
-    }
-
     *,
     *::before,
     *::after {
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
         transition-duration: 0.01ms !important;
     }
+}
+/* Smooth page transitions across Careerly pages */
+body {
+    animation: pageFadeIn 0.35s ease-in-out;
+}
 
+@keyframes pageFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    body {
+        animation: none;
+    }
+}
+/* Restore Account and Get Started button colors */
+
+.nav-actions .account-btn,
+.nav-actions .account-menu > button {
+    color: #333;
+    background-color: transparent;
+}
+
+.nav-actions .signup-btn {
+    background-color: #6c4cf1;
+    color: #ffffff;
+    border: 1px solid #6c4cf1;
+}
+
+.nav-actions .signup-btn:hover {
+    background-color: #5838d8;
+    color: #ffffff;
+}
+
+/* FINAL NAVBAR COLOR OVERRIDES */
+
+.jobs-page .navbar .nav-actions .account-button,
+.jobs-page .navbar .nav-actions .account-button:visited {
+    background-color: #7042d0;
+    color: #ffffff;
+    border-color: #7042d0;
+    border-radius: 24px;
+}
+
+.jobs-page .navbar .nav-actions .account-button:hover,
+.jobs-page .navbar .nav-actions .account-button:focus-visible {
+    background-color: #5931b6;
+    color: #ffffff;
+    border-color: #5931b6;
+}
+
+.jobs-page .navbar .nav-actions .account-arrow {
+    color: #ffffff;
+}
+
+.jobs-page .navbar .nav-actions > .signup-btn,
+.jobs-page .navbar .nav-actions > .signup-btn:visited {
+    background-color: #7042d0;
+    color: #ffffff;
+    border: 1px solid #7042d0;
+    border-radius: 10px;
+}
+
+.jobs-page .navbar .nav-actions > .signup-btn:hover {
+    background-color: #5931b6;
+    color: #ffffff;
+    border-color: #5931b6;
+}
+
+/* =========================================
+   CAREERLY JOBS PAGE NAVBAR FIX
+   Paste this at the END of style.css
+   ========================================= */
+
+.jobs-page .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    min-height: 76px;
+    background: #ffffff;
+    border-bottom: 1px solid #eee8fa;
+}
+
+.jobs-page .navbar .nav-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 13px;
+    flex-shrink: 0;
+}
+
+/* Account button */
+.jobs-page .navbar .nav-actions .account-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    min-height: 42px;
+    padding: 9px 14px;
+    background: #7042d0;
+    color: #ffffff;
+    border: 1px solid #7042d0;
+    border-radius: 24px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.jobs-page .navbar .nav-actions .account-button:hover,
+.jobs-page .navbar .nav-actions .account-menu:focus-within .account-button {
+    background: #5931b6;
+    border-color: #5931b6;
+    color: #ffffff;
+}
+
+.jobs-page .navbar .nav-actions .account-avatar,
+.jobs-page .navbar .nav-actions .account-arrow {
+    color: #ffffff;
+}
+
+/* Get Started button */
+.jobs-page .navbar .nav-actions > .signup-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 43px;
+    padding: 0 19px;
+    background: #7042d0;
+    color: #ffffff;
+    border: 1px solid #7042d0;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background 0.2s ease, border-color 0.2s ease,
+                transform 0.2s ease;
+}
+
+.jobs-page .navbar .nav-actions > .signup-btn:hover {
+    background: #5931b6;
+    border-color: #5931b6;
+    color: #ffffff;
+    transform: translateY(-1px);
+}
+
+/* Account dropdown */
+.jobs-page .navbar .account-menu {
+    position: relative;
+}
+
+.jobs-page .navbar .account-dropdown {
+    display: block;
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    z-index: 1100;
+    width: 255px;
+    max-width: calc(100vw - 24px);
+    padding: 10px;
+    background: #ffffff;
+    border: 1px solid #e9e1fa;
+    border-radius: 15px;
+    box-shadow: 0 16px 40px rgba(56, 35, 94, 0.16);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(8px);
+    transition: opacity 0.2s ease, transform 0.2s ease,
+                visibility 0.2s ease;
+}
+
+.jobs-page .navbar .account-menu:hover .account-dropdown,
+.jobs-page .navbar .account-menu:focus-within .account-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.jobs-page .navbar .account-dropdown > a {
+    display: block;
+    padding: 10px 12px;
+    color: #403653;
+    border-radius: 8px;
+    font-size: 13px;
+    text-decoration: none;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.jobs-page .navbar .account-dropdown > a:hover {
+    background: #f2edff;
+    color: #7042d0;
+}
+
+.jobs-page .navbar .account-heading {
+    padding: 12px;
+}
+
+.jobs-page .navbar .account-heading strong {
+    color: #30264b;
+    font-size: 15px;
+}
+
+.jobs-page .navbar .account-heading span {
+    color: #827790;
+    font-size: 12px;
+}
+
+.jobs-page .navbar .account-divider {
+    height: 1px;
+    margin: 8px 4px;
+    background: #eee8fa;
+}
+
+/* Keep navbar usable on smaller screens */
+@media (max-width: 520px) {
+    .jobs-page .navbar .nav-actions {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .jobs-page .navbar .nav-actions .account-button {
+        min-height: 39px;
+    }
+
+    .jobs-page .navbar .nav-actions > .signup-btn {
+        min-height: 39px;
+        padding: 0 15px;
+    }
+}
+
+/* =========================================
+   CAREERLY LOGIN PAGE — RESTORE STYLING
+   Scoped to login.html only
+========================================= */
+
+body.login-page {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #21183d;
+    background:
+        radial-gradient(ellipse at 15% 20%, rgba(203, 180, 255, 0.36), transparent 42%),
+        radial-gradient(ellipse at 85% 75%, rgba(220, 205, 255, 0.4), transparent 40%),
+        #faf8ff;
+    overflow-x: hidden;
+}
+
+.login-page *,
+.login-page *::before,
+.login-page *::after {
+    box-sizing: border-box;
+}
+
+.login-page a {
+    text-decoration: none;
+}
+
+/* Decorative background orbs */
+.login-page .login-orb {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(2px);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.login-page .orb-one {
+    width: 260px;
+    height: 260px;
+    top: 15%;
+    left: -100px;
+    background: rgba(151, 111, 255, 0.12);
+}
+
+.login-page .orb-two {
+    width: 330px;
+    height: 330px;
+    right: -130px;
+    bottom: 5%;
+    background: rgba(112, 66, 208, 0.12);
+}
+
+.login-page .orb-three {
+    width: 140px;
+    height: 140px;
+    top: 55%;
+    left: 45%;
+    background: rgba(189, 164, 255, 0.12);
+}
+
+/* Header */
+.login-page .login-header {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 24px 7%;
+}
+
+.login-page .login-logo {
+    color: #171536;
+    font-size: 29px;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.login-page .login-logo span {
+    color: #7042d0;
+}
+
+.login-page .login-home-link {
+    display: inline-flex;
+    align-items: center;
+    padding: 11px 17px;
+    color: #7042d0;
+    background: #ffffff;
+    border: 1px solid #e6dcfa;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 700;
+    transition: 0.2s ease;
+}
+
+.login-page .login-home-link:hover {
+    background: #f2edff;
+    border-color: #bca6f0;
+    transform: translateY(-1px);
+}
+
+/* Main two-column layout */
+.login-page .login-container {
+    position: relative;
+    z-index: 1;
+    width: min(1120px, 88%);
+    margin: 28px auto 40px;
+    display: grid;
+    grid-template-columns: 1fr 0.85fr;
+    align-items: center;
+    gap: clamp(40px, 7vw, 100px);
+}
+
+/* Left visual panel */
+.login-page .login-visual {
+    position: relative;
+    padding: 25px 0;
+}
+
+.login-page .login-tag {
+    display: inline-block;
+    padding: 9px 15px;
+    color: #7042d0;
+    background: #eee7ff;
+    border: 1px solid #e0d2ff;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+}
+
+.login-page .login-visual h1 {
+    margin: 25px 0 20px;
+    color: #171536;
+    font-size: clamp(42px, 5vw, 64px);
+    line-height: 1.08;
+    letter-spacing: -2px;
+}
+
+.login-page .login-visual h1 span {
+    color: #7042d0;
+}
+
+.login-page .login-visual > p {
+    max-width: 480px;
+    margin: 0;
+    color: #716783;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+/* Animated career illustration */
+.login-page .career-animation {
+    position: relative;
+    width: 260px;
+    height: 230px;
+    margin: 28px auto 18px;
+}
+
+.login-page .orbit {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border: 1px solid rgba(112, 66, 208, 0.24);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.login-page .orbit-large {
+    width: 220px;
+    height: 220px;
+    animation: login-orbit-spin 22s linear infinite;
+}
+
+.login-page .orbit-small {
+    width: 150px;
+    height: 150px;
+    border-style: dashed;
+    animation: login-orbit-spin 18s linear infinite reverse;
+}
+
+.login-page .career-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: grid;
+    place-items: center;
+    width: 82px;
+    height: 82px;
+    color: #ffffff;
+    background: linear-gradient(135deg, #5945f5, #9147ed);
+    border-radius: 25px;
+    box-shadow: 0 14px 35px rgba(112, 66, 208, 0.28);
+    font-size: 38px;
+    transform: translate(-50%, -50%);
+}
+
+.login-page .floating-icon {
+    position: absolute;
+    display: grid;
+    place-items: center;
+    width: 48px;
+    height: 48px;
+    color: #7042d0;
+    background: #ffffff;
+    border: 1px solid #eee5ff;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(55, 35, 95, 0.1);
+    font-size: 24px;
+    font-weight: 800;
+    animation: login-float 3s ease-in-out infinite;
+}
+
+.login-page .icon-one {
+    top: 12px;
+    left: 25px;
+}
+
+.login-page .icon-two {
+    top: 75px;
+    right: 0;
+    animation-delay: 0.6s;
+}
+
+.login-page .icon-three {
+    bottom: 2px;
+    left: 40px;
+    animation-delay: 1.2s;
+}
+
+.login-page .login-caption {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    color: #716783;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.login-page .caption-dot {
+    width: 8px;
+    height: 8px;
+    background: #7042d0;
+    border-radius: 50%;
+    box-shadow: 0 0 0 5px #eee7ff;
+}
+
+/* Login card */
+.login-page .login-card {
+    width: 100%;
+    padding: clamp(28px, 4vw, 44px);
+    background: rgba(255, 255, 255, 0.96);
+    border: 1px solid #ece4fa;
+    border-radius: 25px;
+    box-shadow: 0 24px 65px rgba(61, 38, 103, 0.12);
+}
+
+.login-page .login-card-icon {
+    display: grid;
+    place-items: center;
+    width: 54px;
+    height: 54px;
+    margin-bottom: 22px;
+    color: #7042d0;
+    background: #f0e8ff;
+    border-radius: 17px;
+    font-size: 29px;
+}
+
+.login-page .login-card h2 {
+    margin: 0 0 10px;
+    color: #21183d;
+    font-size: 30px;
+    letter-spacing: -0.8px;
+}
+
+.login-page .login-subtitle {
+    margin: 0 0 28px;
+    color: #81758f;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Form */
+.login-page .login-card form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-page .login-card form > label {
+    margin: 0 0 9px;
+    color: #403653;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.login-page .login-card input[type="email"],
+.login-page .login-card input[type="password"] {
+    width: 100%;
+    min-height: 49px;
+    margin: 0 0 20px;
+    padding: 13px 15px;
+    color: #30264b;
+    background: #ffffff;
+    border: 1px solid #e3daef;
+    border-radius: 11px;
+    outline: none;
+    font: inherit;
+    font-size: 14px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.login-page .login-card input[type="email"]:focus,
+.login-page .login-card input[type="password"]:focus {
+    border-color: #8d6ce0;
+    box-shadow: 0 0 0 4px rgba(112, 66, 208, 0.1);
+}
+
+.login-page .login-options {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin: -2px 0 23px;
+    color: #716783;
+    font-size: 12px;
+}
+
+.login-page .remember-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.login-page .remember-label input {
+    accent-color: #7042d0;
+}
+
+.login-page .forgot-password {
+    color: #7042d0;
+    font-weight: 700;
+}
+
+/* Sign-in button */
+.login-page .login-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+    min-height: 50px;
+    padding: 13px 18px;
+    color: #ffffff;
+    background: linear-gradient(135deg, #5945f5, #7842d8);
+    border: 0;
+    border-radius: 11px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(89, 69, 245, 0.18);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.login-page .login-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 25px rgba(89, 69, 245, 0.25);
+}
+
+.login-page .login-button span {
+    font-size: 20px;
+}
+
+/* Divider and signup text */
+.login-page .login-divider {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 25px 0;
+    color: #9a8eaa;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.login-page .login-divider::before,
+.login-page .login-divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #eee7f6;
+}
+
+.login-page .signup-text {
+    margin: 0;
+    color: #716783;
+    text-align: center;
+    font-size: 13px;
+}
+
+.login-page .signup-text a {
+    color: #7042d0;
+    font-weight: 800;
+}
+
+.login-page .signup-text a:hover {
+    text-decoration: underline;
+}
+
+.login-page .login-terms {
+    margin: 24px 0 0;
+    color: #9a8eaa;
+    text-align: center;
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+/* Footer */
+.login-page .login-footer {
+    position: relative;
+    z-index: 1;
+    padding: 20px;
+    color: #8a7d9c;
+    text-align: center;
+    font-size: 12px;
+}
+
+/* Animations */
+@keyframes login-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-9px); }
+}
+
+@keyframes login-orbit-spin {
+    from { rotate: 0deg; }
+    to { rotate: 360deg; }
+}
+
+/* Responsive layout */
+@media (max-width: 850px) {
+    .login-page .login-container {
+        width: min(560px, 90%);
+        grid-template-columns: 1fr;
+        gap: 25px;
+        margin-top: 15px;
+    }
+
+    .login-page .login-visual {
+        text-align: center;
+    }
+
+    .login-page .login-visual h1 {
+        font-size: clamp(40px, 8vw, 56px);
+    }
+
+    .login-page .login-visual > p {
+        margin: auto;
+    }
+
+    .login-page .career-animation {
+        margin-top: 20px;
+    }
+
+    .login-page .login-card {
+        max-width: 520px;
+        margin: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .login-page .login-header {
+        padding: 20px 5%;
+    }
+
+    .login-page .login-logo {
+        font-size: 24px;
+    }
+
+    .login-page .login-home-link {
+        padding: 9px 11px;
+        font-size: 12px;
+    }
+
+    .login-page .login-container {
+        width: 92%;
+        margin-top: 5px;
+    }
+
+    .login-page .login-visual h1 {
+        font-size: 39px;
+    }
+
+    .login-page .career-animation {
+        transform: scale(0.85);
+        margin-top: 5px;
+        margin-bottom: 0;
+    }
+
+    .login-page .login-card {
+        padding: 25px 21px;
+        border-radius: 20px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .login-page .orbit,
+    .login-page .floating-icon {
+        animation: none;
+    }
+
+    .login-page *,
+    .login-page *::before,
+    .login-page *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
 }

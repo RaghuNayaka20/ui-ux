@@ -1,1224 +1,234 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <meta name="description" content="Careerly helps students explore career paths, develop valuable skills, and prepare for job opportunities.">
     <title>Careerly | Find Your Career Path</title>
-
     <link rel="stylesheet" href="style.css">
 </head>
+<body class="home-page">
 
-<body>
+<header class="navbar">
+    <a href="index.html" class="logo"><span>✦</span> Careerly</a>
+    <nav class="main-nav">
+        <a href="index.html" class="active">Home</a>
+        <a href="carrers.html">Career Paths</a>
+        <a href="jobs.html">Jobs</a>
+        <a href="assessment.html">Assessment</a>
+        <a href="index.html#career-roadmap">Career Guide</a>
+        <a href="index.html#about">About Us</a>
+    </nav>
+    <div class="nav-actions">
+        <div class="account-menu">
+            <button class="account-button" type="button" aria-label="Open account menu">
+                <span class="account-avatar">👤</span>
+                <span>Account</span>
+                <span class="account-arrow">▾</span>
+            </button>
+            <div class="account-dropdown">
+                <div class="account-heading">
+                    <strong>Your Account</strong>
+                    <span>Manage your career profile</span>
+                </div>
+                <a href="index.html#profile">👤 My Profile</a>
+                <a href="index.html#account-details">🪪 Account Details</a>
+                <a href="index.html#resume">📄 My Resume</a>
+                <a href="index.html#saved-jobs">🔖 Saved Jobs</a>
+                <a href="index.html#notifications">🔔 Notifications</a>
+                <a href="index.html#settings">⚙️ Settings</a>
+                <a href="index.html#privacy">🔒 Privacy &amp; Security</a>
+                <div class="account-divider"></div>
+                <a href="login.html" class="logout-link">↪ Log out</a>
+            </div>
+        </div>
+        <a href="carrers.html" class="signup-btn">Get Started</a>
+    </div>
+</header>
 
-    <!-- ================= NAVBAR ================= -->
-
-    <header class="navbar">
-
-        <a href="index.html" class="logo">
-            <span>✦</span> Careerly
-        </a>
-
-        <nav>
-            <a href="index.html" class="active">Home</a>
-            <a href="carrers.html">Career Paths</a>
-            <a href="jobs.html">Jobs</a>
-            <a href="assessment.html">Assessment</a>
-            <a href="index.html#resources">Resources</a>
-        </nav>
-
-        <div class="nav-buttons">
-
-            <a href="index.html#login" class="login-btn">
-                Login
-            </a>
-
-            <a href="index.html#get-started" class="signup-btn">
-                Get Started
-            </a>
-
+<main>
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">✨ Your career journey starts here</div>
+            <h1>Find a career <span>that fits you.</span></h1>
+            <p>Discover career possibilities, understand the skills employers value, and prepare for opportunities that match your interests and goals.</p>
+            <div class="hero-buttons">
+                <a href="carrers.html" class="primary-btn">Explore Careers →</a>
+                <a href="assessment.html" class="secondary-btn">Take Assessment</a>
+            </div>
+            <div class="hero-stats">
+                <div><strong>Explore</strong><small>Career possibilities</small></div>
+                <div><strong>Develop</strong><small>Useful skills</small></div>
+                <div><strong>Prepare</strong><small>For opportunities</small></div>
+            </div>
         </div>
 
-    </header>
-
-
-    <!-- ================= HERO ================= -->
-
-    <main>
-
-        <section class="hero">
-
-            <div class="hero-content">
-
-                <div class="hero-badge">
-                    ✨ Your career journey starts here
+        <div class="hero-visual">
+            <div class="glow"></div>
+            <div class="floating-card card-one">
+                <span>🎯</span>
+                <div><strong>Find Your Fit</strong><small>Discover your interests</small></div>
+            </div>
+            <div class="career-card">
+                <div class="card-top">
+                    <span class="profile-icon">👨‍💻</span>
+                    <span class="match">Career Spotlight</span>
                 </div>
-
-                <h1>
-                    Find a career
-                    <span>that fits you.</span>
-                </h1>
-
-                <p>
-                    Discover the right career, understand your skills,
-                    and connect with opportunities that match your potential.
-                </p>
-
-                <div class="hero-buttons">
-
-                    <a href="carrers.html" class="primary-btn">
-                        Explore Careers →
-                    </a>
-
-                    <a href="assessment.html" class="secondary-btn">
-                        Take Assessment
-                    </a>
-
+                <h3>Software Engineer</h3>
+                <p>Build applications, solve problems, and create useful digital experiences through technology.</p>
+                <div class="skill-list">
+                    <span>Programming</span>
+                    <span>Problem Solving</span>
+                    <span>Teamwork</span>
                 </div>
-
-                <div class="hero-stats">
-
-                    <div>
-                        <strong>10K+</strong>
-                        <small>Career Opportunities</small>
-                    </div>
-
-                    <div>
-                        <strong>500+</strong>
-                        <small>Career Paths</small>
-                    </div>
-
-                    <div>
-                        <strong>92%</strong>
-                        <small>Match Accuracy</small>
-                    </div>
-
+                <div class="progress-area">
+                    <div class="progress-label"><span>Career Exploration</span><span>01 / 04</span></div>
+                    <div class="progress-bar"><div></div></div>
                 </div>
-
+                <a href="carrers.html" class="career-card-btn">Explore This Career →</a>
             </div>
-
-
-            <!-- ================= HERO VISUAL ================= -->
-
-            <div class="hero-visual">
-
-                <div class="glow"></div>
-
-                <div class="floating-card card-one">
-
-                    <span>🎯</span>
-
-                    <div>
-                        <strong>92% Match</strong>
-                        <small>Software Engineer</small>
-                    </div>
-
-                </div>
-
-
-                <div class="career-card">
-
-                    <div class="card-top">
-
-                        <span class="profile-icon">
-                            👨‍💻
-                        </span>
-
-                        <span class="match">
-                            92% Match
-                        </span>
-
-                    </div>
-
-                    <h3>
-                        Software Engineer
-                    </h3>
-
-                    <p>
-                        Build software, solve problems and
-                        create meaningful impact through technology.
-                    </p>
-
-                    <div class="skill-list">
-
-                        <span>Java</span>
-                        <span>DSA</span>
-                        <span>Problem Solving</span>
-
-                    </div>
-
-                    <div class="progress-area">
-
-                        <div class="progress-label">
-
-                            <span>
-                                Career Fit
-                            </span>
-
-                            <span>
-                                92%
-                            </span>
-
-                        </div>
-
-                        <div class="progress-bar">
-
-                            <div></div>
-
-                        </div>
-
-                    </div>
-
-                    <a href="carrers.html" class="career-card-btn">
-                        Explore Career →
-                    </a>
-
-                </div>
-
-
-                <div class="floating-card card-two">
-
-                    <span>🚀</span>
-
-                    <div>
-
-                        <strong>
-                            Career Growth
-                        </strong>
-
-                        <small>
-                            Junior → Senior → Lead
-                        </small>
-
-                    </div>
-
-                </div>
-
+            <div class="floating-card card-two">
+                <span>🚀</span>
+                <div><strong>Keep Growing</strong><small>Learn, practise, improve</small></div>
             </div>
-
-        </section>
-
-
-        <!-- ================= HOW IT WORKS ================= -->
-
-        <section class="how-section">
-
-            <div class="section-heading">
-
-                <span>
-                    HOW IT WORKS
-                </span>
-
-                <h2>
-                    Your journey to the right career
-                </h2>
-
-                <p>
-                    A simple process designed to help you discover
-                    where your skills can take you.
-                </p>
-
-            </div>
-
-
-            <div class="steps">
-
-                <!-- STEP 01 -->
-
-                <a href="index.html#get-started" class="step-card">
-
-                    <div class="step-number">
-                        01
-                    </div>
-
-                    <div class="step-icon">
-                        👤
-                    </div>
-
-                    <h3>
-                        Create Your Profile
-                    </h3>
-
-                    <p>
-                        Tell us about your education, skills,
-                        interests and experience.
-                    </p>
-
-                </a>
-
-
-                <!-- STEP 02 -->
-
-                <a href="assessment.html" class="step-card">
-
-                    <div class="step-number">
-                        02
-                    </div>
-
-                    <div class="step-icon">
-                        🧠
-                    </div>
-
-                    <h3>
-                        Discover Your Strengths
-                    </h3>
-
-                    <p>
-                        Take our assessment and understand
-                        your strengths and interests.
-                    </p>
-
-                </a>
-
-
-                <!-- STEP 03 -->
-
-                <a href="index.html#jobs" class="step-card">
-
-                    <div class="step-number">
-                        03
-                    </div>
-
-                    <div class="step-icon">
-                        🎯
-                    </div>
-
-                    <h3>
-                        Find Your Match
-                    </h3>
-
-                    <p>
-                        Get personalized career paths and
-                        job recommendations.
-                    </p>
-
-                </a>
-
-
-                <!-- STEP 04 -->
-
-                <a href="carrers.html" class="step-card">
-
-                    <div class="step-number">
-                        04
-                    </div>
-
-                    <div class="step-icon">
-                        💼
-                    </div>
-
-                    <h3>
-                        Apply & Grow
-                    </h3>
-
-                    <p>
-                        Build your skills, apply for jobs
-                        and grow your career.
-                    </p>
-
-                </a>
-
-            </div>
-
-        </section>
-
-
-        <!-- ================= CAREER CATEGORIES ================= -->
-
-        <section class="categories-section">
-
-            <div class="section-heading">
-
-                <span>
-                    EXPLORE
-                </span>
-
-                <h2>
-                    Explore career possibilities
-                </h2>
-
-                <p>
-                    Find a career path that matches your interests.
-                </p>
-
-            </div>
-
-
-            <div class="categories">
-
-                <!-- TECHNOLOGY -->
-
-                <a href="carrers.html" class="category-card">
-
-                    <div class="category-icon">
-                        💻
-                    </div>
-
-                    <h3>
-                        Technology
-                    </h3>
-
-                    <p>
-                        120+ career paths
-                    </p>
-
-                    <span>
-                        Explore →
-                    </span>
-
-                </a>
-
-
-                <!-- DATA -->
-
-                <a href="carrers.html" class="category-card">
-
-                    <div class="category-icon">
-                        📊
-                    </div>
-
-                    <h3>
-                        Data & Analytics
-                    </h3>
-
-                    <p>
-                        80+ career paths
-                    </p>
-
-                    <span>
-                        Explore →
-                    </span>
-
-                </a>
-
-
-                <!-- DESIGN -->
-
-                <a href="carrers.html" class="category-card">
-
-                    <div class="category-icon">
-                        🎨
-                    </div>
-
-                    <h3>
-                        Design
-                    </h3>
-
-                    <p>
-                        60+ career paths
-                    </p>
-
-                    <span>
-                        Explore →
-                    </span>
-
-                </a>
-
-
-                <!-- BUSINESS -->
-
-                <a href="carrers.html" class="category-card">
-
-                    <div class="category-icon">
-                        📈
-                    </div>
-
-                    <h3>
-                        Business
-                    </h3>
-
-                    <p>
-                        90+ career paths
-                    </p>
-
-                    <span>
-                        Explore →
-                    </span>
-
-                </a>
-
-
-                <!-- FINANCE -->
-
-                <a href="carrers.html" class="category-card">
-
-                    <div class="category-icon">
-                        💰
-                    </div>
-
-                    <h3>
-                        Finance
-                    </h3>
-
-                    <p>
-                        70+ career paths
-                    </p>
-
-                    <span>
-                        Explore →
-                    </span>
-
-                </a>
-
-
-                <!-- HEALTHCARE -->
-
-                <a href="carrers.html" class="category-card">
-
-                    <div class="category-icon">
-                        🧬
-                    </div>
-
-                    <h3>
-                        Healthcare
-                    </h3>
-
-                    <p>
-                        50+ career paths
-                    </p>
-
-                    <span>
-                        Explore →
-                    </span>
-
-                </a>
-
-            </div>
-
-        </section>
-
-
-        <!-- ================= JOB MATCHING ================= -->
-
-        <section class="utility-section" id="jobs">
-
-            <div class="section-heading">
-
-                <span>
-                    JOB MATCHING
-                </span>
-
-                <h2>
-                    Start with a career direction
-                </h2>
-
-                <p>
-                    Choose an area and continue to the Career Paths
-                    page to explore relevant roles.
-                </p>
-
-            </div>
-
-
-            <div class="utility-grid">
-
-                <!-- TECHNOLOGY JOBS -->
-
-                <a href="carrers.html" class="utility-card">
-
-                    <span>
-                        💻
-                    </span>
-
-                    <h3>
-                        Technology Jobs
-                    </h3>
-
-                    <p>
-                        Software, AI, cloud and development careers.
-                    </p>
-
-                    <strong>
-                        Explore roles →
-                    </strong>
-
-                </a>
-
-
-                <!-- DATA JOBS -->
-
-                <a href="carrers.html" class="utility-card">
-
-                    <span>
-                        📊
-                    </span>
-
-                    <h3>
-                        Data Jobs
-                    </h3>
-
-                    <p>
-                        Analytics and data-focused career options.
-                    </p>
-
-                    <strong>
-                        Explore roles →
-                    </strong>
-
-                </a>
-
-
-                <!-- DESIGN JOBS -->
-
-                <a href="carrers.html" class="utility-card">
-
-                    <span>
-                        🎨
-                    </span>
-
-                    <h3>
-                        Design Jobs
-                    </h3>
-
-                    <p>
-                        UI/UX and creative technology opportunities.
-                    </p>
-
-                    <strong>
-                        Explore roles →
-                    </strong>
-
-                </a>
-
-            </div>
-
-        </section>
-
-
-        <!-- ================= ASSESSMENT ================= -->
-
-        <section class="assessment-section" id="assessment">
-
-            <div class="section-heading">
-
-                <span>
-                    CAREER ASSESSMENT
-                </span>
-
-                <h2>
-                    Quickly identify your interest area
-                </h2>
-
-                <p>
-                    Select the type of work you prefer and
-                    Careerly will suggest a direction.
-                </p>
-
-            </div>
-
-
-            <div class="assessment-box">
-
-                <!-- RADIO BUTTONS -->
-
-                <input
-                    type="radio"
-                    name="interest"
-                    id="interest-tech"
-                >
-
-                <input
-                    type="radio"
-                    name="interest"
-                    id="interest-data"
-                >
-
-                <input
-                    type="radio"
-                    name="interest"
-                    id="interest-design"
-                >
-
-                <input
-                    type="radio"
-                    name="interest"
-                    id="interest-business"
-                >
-
-
-                <h3>
-                    What type of work sounds most interesting?
-                </h3>
-
-
-                <!-- OPTIONS -->
-
-                <div class="assessment-options">
-
-                    <label for="interest-tech">
-                        💻 Building technology
-                    </label>
-
-                    <label for="interest-data">
-                        📊 Working with data
-                    </label>
-
-                    <label for="interest-design">
-                        🎨 Designing experiences
-                    </label>
-
-                    <label for="interest-business">
-                        📈 Solving business problems
-                    </label>
-
-                </div>
-
-
-                <!-- TECHNOLOGY RESULT -->
-
-                <div class="assessment-result result-tech">
-
-                    <strong>
-                        Technology may fit you.
-                    </strong>
-
-                    <p>
-                        Explore Software Engineer, AI Engineer
-                        and Cloud Engineer paths.
-                    </p>
-
-                    <a href="carrers.html">
-                        Explore Careers →
-                    </a>
-
-                </div>
-
-
-                <!-- DATA RESULT -->
-
-                <div class="assessment-result result-data">
-
-                    <strong>
-                        Data may fit you.
-                    </strong>
-
-                    <p>
-                        Explore Data Analyst and other
-                        analytical career paths.
-                    </p>
-
-                    <a href="carrers.html">
-                        Explore Careers →
-                    </a>
-
-                </div>
-
-
-                <!-- DESIGN RESULT -->
-
-                <div class="assessment-result result-design">
-
-                    <strong>
-                        Design may fit you.
-                    </strong>
-
-                    <p>
-                        Explore UI/UX and creative career paths.
-                    </p>
-
-                    <a href="carrers.html">
-                        Explore Careers →
-                    </a>
-
-                </div>
-
-
-                <!-- BUSINESS RESULT -->
-
-                <div class="assessment-result result-business">
-
-                    <strong>
-                        Business may fit you.
-                    </strong>
-
-                    <p>
-                        Explore Product Management and
-                        business career paths.
-                    </p>
-
-                    <a href="carrers.html">
-                        Explore Careers →
-                    </a>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ================= RESOURCES ================= -->
-
-        <section class="resources-section" id="resources">
-
-            <div class="section-heading">
-
-                <span>
-                    RESOURCES
-                </span>
-
-                <h2>
-                    Resources to help you move forward
-                </h2>
-
-                <p>
-                    Use these starting points while building
-                    your career direction.
-                </p>
-
-            </div>
-
-
-            <div class="utility-grid">
-
-                <!-- SELF ASSESSMENT -->
-
-                <a href="assessment.html" class="utility-card">
-
-                    <span>
-                        🧠
-                    </span>
-
-                    <h3>
-                        Self Assessment
-                    </h3>
-
-                    <p>
-                        Identify the kind of work that interests you.
-                    </p>
-
-                    <strong>
-                        Start assessment →
-                    </strong>
-
-                </a>
-
-
-                <!-- CAREER PATHS -->
-
-                <a href="carrers.html" class="utility-card">
-
-                    <span>
-                        🧭
-                    </span>
-
-                    <h3>
-                        Career Paths
-                    </h3>
-
-                    <p>
-                        Compare different career directions.
-                    </p>
-
-                    <strong>
-                        Explore paths →
-                    </strong>
-
-                </a>
-
-
-                <!-- JOB MATCHING -->
-
-                <a href="index.html#jobs" class="utility-card">
-
-                    <span>
-                        💼
-                    </span>
-
-                    <h3>
-                        Job Matching
-                    </h3>
-
-                    <p>
-                        Start from a career area and explore
-                        suitable roles.
-                    </p>
-
-                    <strong>
-                        Find opportunities →
-                    </strong>
-
-                </a>
-
-            </div>
-
-        </section>
-
-
-        <!-- ================= GET STARTED ================= -->
-
-        <section class="get-started-section" id="get-started">
-
-            <div class="section-heading">
-
-                <span>
-                    GET STARTED
-                </span>
-
-                <h2>
-                    Create your career direction
-                </h2>
-
-                <p>
-                    Enter a few basic details to start
-                    your profile.
-                </p>
-
-            </div>
-
-
-            <form
-                class="profile-form"
-                action="#profile-created"
-            >
-
-                <input
-                    type="text"
-                    placeholder="Your name"
-                    required
-                >
-
-                <input
-                    type="text"
-                    placeholder="Education / Degree"
-                    required
-                >
-
-                <input
-                    type="text"
-                    placeholder="Main skill"
-                    required
-                >
-
-                <select required>
-
-                    <option value="">
-                        Interested area
-                    </option>
-
-                    <option>
-                        Technology
-                    </option>
-
-                    <option>
-                        Data
-                    </option>
-
-                    <option>
-                        Design
-                    </option>
-
-                    <option>
-                        Business
-                    </option>
-
-                </select>
-
-                <button type="submit">
-                    Create Profile →
-                </button>
-
-            </form>
-
-
-            <div
-                id="profile-created"
-                class="form-success"
-            >
-
-                <strong>
-                    Profile details entered successfully.
-                </strong>
-
-                <p>
-                    Next step: explore careers that match
-                    your selected interest.
-                </p>
-
-                <a href="carrers.html">
-                    Explore Career Paths →
-                </a>
-
-            </div>
-
-        </section>
-
-
-        <!-- ================= LOGIN ================= -->
-
-        <section class="login-section" id="login">
-
-            <div class="section-heading">
-
-                <span>
-                    LOGIN
-                </span>
-
-                <h2>
-                    Welcome back to Careerly
-                </h2>
-
-                <p>
-                    This is a frontend-only login prototype.
-                </p>
-
-            </div>
-
-
-            <form
-                class="profile-form login-form"
-                action="#logged-in"
-            >
-
-                <input
-                    type="email"
-                    placeholder="Email address"
-                    required
-                >
-
-                <input
-                    type="password"
-                    placeholder="Password"
-                    required
-                >
-
-                <button type="submit">
-                    Login →
-                </button>
-
-            </form>
-
-
-            <div
-                id="logged-in"
-                class="form-success"
-            >
-
-                <strong>
-                    Login form submitted.
-                </strong>
-
-                <p>
-                    A real deployment would connect this
-                    form to backend authentication.
-                </p>
-
-            </div>
-
-        </section>
-
-
-        <!-- ================= ABOUT ================= -->
-
-        <section class="about-section" id="about">
-
-            <div class="section-heading">
-
-                <span>
-                    ABOUT CAREERLY
-                </span>
-
-                <h2>
-                    Helping students choose with more confidence
-                </h2>
-
-                <p>
-                    Careerly brings career exploration,
-                    assessment and job-direction features
-                    into one simple platform.
-                </p>
-
-            </div>
-
-        </section>
-
-
-        <!-- ================= PRIVACY ================= -->
-
-        <section class="policy-section" id="privacy">
-
-            <div class="section-heading">
-
-                <span>
-                    PRIVACY
-                </span>
-
-                <h2>
-                    Privacy Policy
-                </h2>
-
-                <p>
-                    This prototype does not store your
-                    information. A real deployment would
-                    need secure data storage.
-                </p>
-
-            </div>
-
-        </section>
-
-
-        <!-- ================= TERMS ================= -->
-
-        <section class="policy-section" id="terms">
-
-            <div class="section-heading">
-
-                <span>
-                    TERMS
-                </span>
-
-                <h2>
-                    Terms of Use
-                </h2>
-
-                <p>
-                    This frontend is a project prototype
-                    for career exploration.
-                </p>
-
-            </div>
-
-        </section>
-
-
-        <!-- ================= CTA ================= -->
-
-        <section class="cta">
-
-            <div>
-
-                <span>
-                    YOUR FUTURE STARTS TODAY
-                </span>
-
-                <h2>
-                    Ready to find your path?
-                </h2>
-
-                <p>
-                    Take the first step towards a career
-                    that matches who you are.
-                </p>
-
-                <a
-                    href="index.html#get-started"
-                    class="primary-btn"
-                >
-                    Get Started →
-                </a>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-    <!-- ================= FOOTER ================= -->
-
-    <footer>
-
-        <!-- FOOTER BRAND -->
-
-        <div class="footer-brand">
-
-            <div class="logo">
-                <span>✦</span> Careerly
-            </div>
-
-            <p>
-                Discover your path.<br>
-                Build your future.
-            </p>
-
         </div>
+    </section>
 
-
-        <!-- PLATFORM -->
-
-        <div class="footer-column">
-
-            <h4>
-                Platform
-            </h4>
-
-            <a href="index.html">
-                Home
-            </a>
-
-            <a href="carrers.html">
-                Career Paths
-            </a>
-
-            <a href="jobs.html">
-                Jobs
-            </a>
-
-            <a href="assessment.html">
-                Assessments
-            </a>
-
+    <section class="guidance-section" id="career-roadmap">
+        <div class="section-heading">
+            <span>YOUR CAREER ROADMAP</span>
+            <h2>Turn your interests into a clear plan</h2>
+            <p>Career decisions become easier when you break them into small, practical steps.</p>
         </div>
-
-
-        <!-- COMPANY -->
-
-        <div class="footer-column">
-
-            <h4>
-                Company
-            </h4>
-
-            <a href="index.html#about">
-                About Us
-            </a>
-
-            <a href="index.html#about">
-                Our Story
-            </a>
-
-            <a href="mailto:careerly@example.com">
-                Contact
-            </a>
-
-            <a href="carrers.html">
-                Careers
-            </a>
-
+        <div class="guidance-grid roadmap-grid">
+            <article class="guidance-card"><div class="guidance-icon">01</div><h3>Know Yourself</h3><p>Think about the subjects, activities, and problems that genuinely interest you.</p></article>
+            <article class="guidance-card"><div class="guidance-icon">02</div><h3>Research Careers</h3><p>Compare responsibilities, work environments, education requirements, and opportunities.</p></article>
+            <article class="guidance-card"><div class="guidance-icon">03</div><h3>Build Your Skills</h3><p>Learn the fundamentals, tools, and techniques relevant to the roles you want to pursue.</p></article>
+            <article class="guidance-card"><div class="guidance-icon">04</div><h3>Gain Experience</h3><p>Apply your knowledge through projects, internships, collaboration, and practice.</p></article>
         </div>
+    </section>
 
-
-        <!-- SUPPORT -->
-
-        <div class="footer-column">
-
-            <h4>
-                Support
-            </h4>
-
-            <a href="index.html#resources">
-                Help Center
-            </a>
-
-            <a href="index.html#privacy">
-                Privacy Policy
-            </a>
-
-            <a href="index.html#terms">
-                Terms
-            </a>
-
-            <a href="index.html#resources">
-                FAQs
-            </a>
-
+    <section class="guidance-section skills-guidance" id="skills-guide">
+        <div class="section-heading">
+            <span>SKILLS THAT TRAVEL WITH YOU</span>
+            <h2>Build a strong foundation</h2>
+            <p>Technical knowledge matters, but the way you solve problems and work with others matters too.</p>
         </div>
+        <div class="skills-guidance-layout">
+            <article class="skills-feature">
+                <span class="feature-label">TECHNICAL FOUNDATION</span>
+                <h3>Learn by doing, not just by watching.</h3>
+                <p>Strengthen the basics for your chosen field. Use what you learn to create projects that demonstrate your abilities.</p>
+                <a href="carrers.html" class="text-link">Explore career skill requirements →</a>
+            </article>
+            <div class="skill-points">
+                <article class="skill-point"><span class="skill-point-icon">⌘</span><div><h3>Problem-solving</h3><p>Break complex tasks into manageable steps and test possible solutions.</p></div></article>
+                <article class="skill-point"><span class="skill-point-icon">↗</span><div><h3>Communication</h3><p>Explain ideas clearly, ask useful questions, and document your work.</p></div></article>
+                <article class="skill-point"><span class="skill-point-icon">◎</span><div><h3>Adaptability</h3><p>Keep learning as technologies, tools, and industry needs change.</p></div></article>
+                <article class="skill-point"><span class="skill-point-icon">✦</span><div><h3>Collaboration</h3><p>Practise sharing responsibilities, giving feedback, and working in teams.</p></div></article>
+            </div>
+        </div>
+    </section>
 
-    </footer>
+    <section class="guidance-section job-ready-section" id="job-ready">
+        <div class="section-heading">
+            <span>PREPARE FOR THE NEXT STEP</span>
+            <h2>Make your learning visible</h2>
+            <p>Develop practical habits that help you demonstrate your knowledge and prepare for employment.</p>
+        </div>
+        <div class="guidance-grid job-ready-grid">
+            <article class="guidance-card"><div class="ready-icon">▤</div><h3>Create Projects</h3><p>Build projects that solve a real problem. Explain your approach, tools, and results.</p></article>
+            <article class="guidance-card"><div class="ready-icon">✎</div><h3>Prepare Your Resume</h3><p>Highlight relevant skills, academic projects, internships, and your contributions.</p></article>
+            <article class="guidance-card"><div class="ready-icon">⌕</div><h3>Practise Interviews</h3><p>Review role-specific concepts and practise explaining your thinking with examples.</p></article>
+        </div>
+    </section>
 
+    <section class="tools-section" id="resources">
+        <div class="section-heading">
+            <span>EXPLORE CAREERLY</span>
+            <h2>Choose the right next step</h2>
+            <p>Each Careerly page serves a different purpose. Go directly to the guidance you need.</p>
+        </div>
+        <div class="tools-grid">
+            <a href="assessment.html" class="tool-card"><span class="tool-icon">🧭</span><div><h3>Career Assessment</h3><p>Reflect on your interests, preferred activities, and work priorities.</p><strong>Explore Assessment →</strong></div></a>
+            <a href="carrers.html" class="tool-card"><span class="tool-icon">🗺️</span><div><h3>Career Paths</h3><p>Compare roles, responsibilities, education, skills, and salary guidance.</p><strong>Explore Career Paths →</strong></div></a>
+            <a href="jobs.html" class="tool-card"><span class="tool-icon">💼</span><div><h3>Job Opportunities</h3><p>Explore example job roles, common requirements, and application preparation.</p><strong>Explore Jobs →</strong></div></a>
+        </div>
+        <p class="prototype-note">Careerly is currently a frontend prototype. Job listings are examples and are not connected to live job services. Assessment results are not generated through personalized scoring.</p>
+    </section>
+
+    <section class="about-section" id="about">
+        <div class="about-content">
+            <span class="about-eyebrow">ABOUT CAREERLY</span>
+            <h2>Career decisions, made easier to explore.</h2>
+            <p>Careerly brings career research, self-reflection, and job exploration together in one place. It is designed to help students and job seekers take informed next steps, while leaving the final decision in their hands.</p>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div>
+            <span>YOUR FUTURE STARTS TODAY</span>
+            <h2>Ready to explore your options?</h2>
+            <p>Start researching careers, understand the skills you need, and plan your next step.</p>
+            <a href="carrers.html" class="primary-btn">Explore Career Paths →</a>
+        </div>
+    </section>
+</main>
+
+<section class="profile-section" id="profile">
+    <div class="profile-card">
+        <span class="profile-tag">YOUR CAREER JOURNEY</span>
+        <h2>Create your profile</h2>
+        <p>Tell us about yourself and the career you want to pursue.</p>
+        <form action="index.html" method="get" class="profile-form">
+            <label for="profile-name">Full name</label>
+            <input id="profile-name" name="name" type="text" placeholder="Enter your full name" required>
+            <label for="profile-email">Email address</label>
+            <input id="profile-email" name="email" type="email" placeholder="you@example.com" required>
+            <label for="profile-education">Education</label>
+            <input id="profile-education" name="education" type="text" placeholder="e.g. BE in Information Science" required>
+            <label for="profile-skills">Skills</label>
+            <textarea id="profile-skills" name="skills" placeholder="e.g. HTML, CSS, Java, communication" rows="3" required></textarea>
+            <label for="profile-career">Career interest</label>
+            <select id="profile-career" name="career" required>
+                <option value="">Select your career interest</option>
+                <option value="software">Software Development</option>
+                <option value="data">Data Science</option>
+                <option value="cybersecurity">Cybersecurity</option>
+                <option value="design">UI/UX Design</option>
+                <option value="other">Other</option>
+            </select>
+            <button type="submit" class="login-button">Create profile →</button>
+        </form>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-brand">
+        <a href="index.html" class="logo"><span>✦</span> Careerly</a>
+        <p>Discover your path.<br>Build your future.</p>
+    </div>
+    <div class="footer-column">
+        <h4>Platform</h4>
+        <a href="index.html">Home</a>
+        <a href="carrers.html">Career Paths</a>
+        <a href="jobs.html">Jobs</a>
+        <a href="assessment.html">Assessment</a>
+    </div>
+    <div class="footer-column">
+        <h4>Explore</h4>
+        <a href="index.html#career-roadmap">Career Guide</a>
+        <a href="index.html#skills-guide">Skills Guidance</a>
+        <a href="index.html#job-ready">Job Readiness</a>
+        <a href="index.html#about">About Careerly</a>
+    </div>
+    <div class="footer-column">
+        <h4>Support</h4>
+        <a href="mailto:careerly@example.com">Contact</a>
+        <a href="index.html#resources">Platform Guide</a>
+        <a href="index.html#about">About Us</a>
+    </div>
+</footer>
 
 </body>
-
 </html>
